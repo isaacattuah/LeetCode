@@ -6652,6 +6652,34 @@
 
 <h2 id="1017-convert-to-base-2-starstar">1017. Convert to Base -2 <a href="https://leetcode.com/problems/convert-to-base-2">$\star\star$</a></h2>
 <h2 id="1018-binary-prefix-divisible-by-5-star">1018. Binary Prefix Divisible By 5 <a href="https://leetcode.com/problems/binary-prefix-divisible-by-5">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span> <span class="nf">prefixesDivBy5</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">:</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">num</span> <span class="o">=</span> <span class="o">(</span><span class="n">num</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">a</span><span class="o">)</span> <span class="o">%</span> <span class="mi">5</span><span class="o">;</span>
+      <span class="n">ans</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1019-next-greater-node-in-linked-list-starstar">1019. Next Greater Node In Linked List <a href="https://leetcode.com/problems/next-greater-node-in-linked-list">$\star\star$</a></h2>
 <h2 id="1020-number-of-enclaves-starstar">1020. Number of Enclaves <a href="https://leetcode.com/problems/number-of-enclaves">$\star\star$</a></h2>
                 
