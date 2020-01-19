@@ -6526,7 +6526,7 @@
         <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">index</span><span class="o">;</span>
         <span class="n">index</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">index</span><span class="o">];</span>
         <span class="n">nums</span><span class="o">[</span><span class="n">temp</span><span class="o">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
-        <span class="n">count</span><span class="o">++;</span>
+        <span class="o">++</span><span class="n">count</span><span class="o">;</span>
       <span class="o">}</span>
       <span class="n">ans</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">ans</span><span class="o">,</span> <span class="n">count</span><span class="o">);</span>
     <span class="o">}</span>
@@ -6565,7 +6565,7 @@
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">row</span> <span class="o">:</span> <span class="n">nums</span><span class="o">)</span>
       <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">row</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">ans</span><span class="o">[</span><span class="n">k</span> <span class="o">/</span> <span class="n">c</span><span class="o">][</span><span class="n">k</span> <span class="o">%</span> <span class="n">c</span><span class="o">]</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
-        <span class="n">k</span><span class="o">++;</span>
+        <span class="o">++</span><span class="n">k</span><span class="o">;</span>
       <span class="o">}</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>

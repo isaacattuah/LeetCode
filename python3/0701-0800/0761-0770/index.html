@@ -5491,6 +5491,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#767-reorganize-string-starstar" class="md-nav__link">
+    767. Reorganize String $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#768-max-chunks-to-make-sorted-ii-starstarstar" class="md-nav__link">
+    768. Max Chunks To Make Sorted II $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#769-max-chunks-to-make-sorted-starstar" class="md-nav__link">
     769. Max Chunks To Make Sorted $\star\star$
   </a>
@@ -6402,6 +6416,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#767-reorganize-string-starstar" class="md-nav__link">
+    767. Reorganize String $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#768-max-chunks-to-make-sorted-ii-starstarstar" class="md-nav__link">
+    768. Max Chunks To Make Sorted II $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#769-max-chunks-to-make-sorted-starstar" class="md-nav__link">
     769. Max Chunks To Make Sorted $\star\star$
   </a>
@@ -6476,6 +6504,26 @@
 <h2 id="764-largest-plus-sign-starstar">764. Largest Plus Sign <a href="https://leetcode.com/problems/largest-plus-sign">$\star\star$</a></h2>
 <h2 id="765-couples-holding-hands-starstarstar">765. Couples Holding Hands <a href="https://leetcode.com/problems/couples-holding-hands">$\star\star\star$</a></h2>
 <h2 id="766-toeplitz-matrix-star">766. Toeplitz Matrix <a href="https://leetcode.com/problems/toeplitz-matrix">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isToeplitzMatrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">matrix</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="767-reorganize-string-starstar">767. Reorganize String <a href="https://leetcode.com/problems/reorganize-string">$\star\star$</a></h2>
+<h2 id="768-max-chunks-to-make-sorted-ii-starstarstar">768. Max Chunks To Make Sorted II <a href="https://leetcode.com/problems/max-chunks-to-make-sorted-ii">$\star\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -6492,21 +6540,7 @@
 14
 15
 16
-17
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Error</span><span class="sb">``</span><span class="err">`</span>
-
-<span class="c1">## 767. Reorganize String [$\star\star$](https://leetcode.com/problems/reorganize-string)</span>
-
-<span class="c1">## 768. Max Chunks To Make Sorted II [$\star\star\star$](https://leetcode.com/problems/max-chunks-to-make-sorted-ii)</span>
-
-<span class="sb">``</span><span class="err">`</span><span class="n">python</span>
-<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">maxChunksToSorted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 

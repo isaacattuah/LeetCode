@@ -6492,9 +6492,9 @@
       <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">height</span><span class="o">[</span><span class="n">l</span><span class="o">],</span> <span class="n">height</span><span class="o">[</span><span class="n">r</span><span class="o">]);</span>
       <span class="n">ans</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">ans</span><span class="o">,</span> <span class="o">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="o">)</span> <span class="o">*</span> <span class="n">h</span><span class="o">);</span>
       <span class="k">while</span> <span class="o">(</span><span class="n">height</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">&lt;=</span> <span class="n">h</span> <span class="o">&amp;&amp;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">)</span>
-        <span class="n">l</span><span class="o">++;</span>
+        <span class="o">++</span><span class="n">l</span><span class="o">;</span>
       <span class="k">while</span> <span class="o">(</span><span class="n">height</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">&lt;=</span> <span class="n">h</span> <span class="o">&amp;&amp;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">)</span>
-        <span class="n">r</span><span class="o">--;</span>
+        <span class="o">--</span><span class="n">r</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
@@ -6545,7 +6545,7 @@
 
     <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
       <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span>
         <span class="k">continue</span><span class="o">;</span>
 
@@ -6555,16 +6555,16 @@
         <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">+</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">];</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">sum</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
           <span class="n">ans</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">],</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">]));</span>
-          <span class="n">l</span><span class="o">++;</span>
-          <span class="n">r</span><span class="o">--;</span>
+          <span class="o">++</span><span class="n">l</span><span class="o">;</span>
+          <span class="o">--</span><span class="n">r</span><span class="o">;</span>
           <span class="k">while</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">)</span>
-            <span class="n">l</span><span class="o">++;</span>
+            <span class="o">++</span><span class="n">l</span><span class="o">;</span>
           <span class="k">while</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">)</span>
-            <span class="n">r</span><span class="o">--;</span>
+            <span class="o">--</span><span class="n">r</span><span class="o">;</span>
         <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">sum</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-          <span class="n">l</span><span class="o">++;</span>
+          <span class="o">++</span><span class="n">l</span><span class="o">;</span>
         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-          <span class="n">r</span><span class="o">--;</span>
+          <span class="o">--</span><span class="n">r</span><span class="o">;</span>
         <span class="o">}</span>
       <span class="o">}</span>
     <span class="o">}</span>
@@ -6606,7 +6606,7 @@
 
     <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
       <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
       <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
       <span class="k">while</span> <span class="o">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
@@ -6616,9 +6616,9 @@
         <span class="k">if</span> <span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">sum</span> <span class="o">-</span> <span class="n">target</span><span class="o">)</span> <span class="o">&lt;</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">ans</span> <span class="o">-</span> <span class="n">target</span><span class="o">))</span>
           <span class="n">ans</span> <span class="o">=</span> <span class="n">sum</span><span class="o">;</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">sum</span> <span class="o">&lt;</span> <span class="n">target</span><span class="o">)</span>
-          <span class="n">l</span><span class="o">++;</span>
+          <span class="o">++</span><span class="n">l</span><span class="o">;</span>
         <span class="k">else</span>
-          <span class="n">r</span><span class="o">--;</span>
+          <span class="o">--</span><span class="n">r</span><span class="o">;</span>
       <span class="o">}</span>
     <span class="o">}</span>
 
@@ -6697,19 +6697,19 @@
           <span class="n">ans</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">path</span><span class="o">));</span>
           <span class="n">path</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">path</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
           <span class="n">path</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">path</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
-          <span class="n">l</span><span class="o">++;</span>
+          <span class="o">++</span><span class="n">l</span><span class="o">;</span>
           <span class="k">while</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">)</span>
-            <span class="n">l</span><span class="o">++;</span>
+            <span class="o">++</span><span class="n">l</span><span class="o">;</span>
         <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">sum</span> <span class="o">&lt;</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
-          <span class="n">l</span><span class="o">++;</span>
+          <span class="o">++</span><span class="n">l</span><span class="o">;</span>
         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-          <span class="n">r</span><span class="o">--;</span>
+          <span class="o">--</span><span class="n">r</span><span class="o">;</span>
         <span class="o">}</span>
       <span class="o">}</span>
       <span class="k">return</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">l</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">l</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
       <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">l</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span>
         <span class="k">continue</span><span class="o">;</span>
 

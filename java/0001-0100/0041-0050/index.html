@@ -6495,11 +6495,11 @@
 
     <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
       <span class="k">while</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">!=</span> <span class="n">nums</span><span class="o">[</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span>
         <span class="n">swap</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
       <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">!=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
         <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
 
@@ -6550,11 +6550,11 @@
       <span class="k">if</span> <span class="o">(</span><span class="n">height</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">height</span><span class="o">[</span><span class="n">r</span><span class="o">])</span> <span class="o">{</span>
         <span class="n">maxLeft</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxLeft</span><span class="o">,</span> <span class="n">height</span><span class="o">[</span><span class="n">l</span><span class="o">]);</span>
         <span class="n">ans</span> <span class="o">+=</span> <span class="n">maxLeft</span> <span class="o">-</span> <span class="n">height</span><span class="o">[</span><span class="n">l</span><span class="o">];</span>
-        <span class="n">l</span><span class="o">++;</span>
+        <span class="o">++</span><span class="n">l</span><span class="o">;</span>
       <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
         <span class="n">maxRight</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxRight</span><span class="o">,</span> <span class="n">height</span><span class="o">[</span><span class="n">r</span><span class="o">]);</span>
         <span class="n">ans</span> <span class="o">+=</span> <span class="n">maxRight</span> <span class="o">-</span> <span class="n">height</span><span class="o">[</span><span class="n">r</span><span class="o">];</span>
-        <span class="n">r</span><span class="o">--;</span>
+        <span class="o">--</span><span class="n">r</span><span class="o">;</span>
       <span class="o">}</span>
     <span class="o">}</span>
 
@@ -6589,10 +6589,10 @@
     <span class="kt">int</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">farthest</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
       <span class="n">farthest</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">farthest</span><span class="o">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
       <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">ans</span><span class="o">++;</span>
+        <span class="o">++</span><span class="n">ans</span><span class="o">;</span>
         <span class="n">end</span> <span class="o">=</span> <span class="n">farthest</span><span class="o">;</span>
       <span class="o">}</span>
     <span class="o">}</span>
@@ -6622,9 +6622,9 @@
 14
 15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">rotate</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">matrix</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">min</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span> <span class="n">min</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">min</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span> <span class="o">++</span><span class="n">min</span><span class="o">)</span> <span class="o">{</span>
       <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">min</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
-      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">max</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">max</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">min</span><span class="o">;</span>
         <span class="kt">int</span> <span class="n">top</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">[</span><span class="n">min</span><span class="o">][</span><span class="n">i</span><span class="o">];</span>
         <span class="n">matrix</span><span class="o">[</span><span class="n">min</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">[</span><span class="n">max</span> <span class="o">-</span> <span class="n">offset</span><span class="o">][</span><span class="n">min</span><span class="o">];</span>

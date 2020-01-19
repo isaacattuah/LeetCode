@@ -6488,13 +6488,13 @@
 
     <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">;</span> <span class="n">k</span><span class="o">--)</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">;</span> <span class="o">--</span><span class="n">k</span><span class="o">)</span>
       <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="o">;)</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="o">[</span><span class="n">k</span><span class="o">])</span> <span class="o">{</span>
           <span class="n">ans</span> <span class="o">+=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span><span class="o">;</span>
-          <span class="n">j</span><span class="o">--;</span>
+          <span class="o">--</span><span class="n">j</span><span class="o">;</span>
         <span class="o">}</span> <span class="k">else</span>
-          <span class="n">i</span><span class="o">++;</span>
+          <span class="o">++</span><span class="n">i</span><span class="o">;</span>
       <span class="o">}</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>

@@ -6526,7 +6526,7 @@
         <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span>
         <span class="n">index</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
         <span class="n">nums</span><span class="p">[</span><span class="n">temp</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-        <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">count</span><span class="p">;</span>
       <span class="p">}</span>
       <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">count</span><span class="p">);</span>
     <span class="p">}</span>
@@ -6565,7 +6565,7 @@
     <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="nl">row</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span>
       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">ans</span><span class="p">[</span><span class="n">k</span> <span class="o">/</span> <span class="n">c</span><span class="p">][</span><span class="n">k</span> <span class="o">%</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
-        <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">k</span><span class="p">;</span>
       <span class="p">}</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
@@ -6603,11 +6603,11 @@
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">map1</span><span class="p">(</span><span class="mi">26</span><span class="p">);</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">map2</span><span class="p">(</span><span class="mi">26</span><span class="p">);</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">s1</span><span class="p">)</span> <span class="n">map1</span><span class="p">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">s1</span><span class="p">)</span> <span class="o">++</span><span class="n">map1</span><span class="p">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">];</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">m</span><span class="p">)</span> <span class="n">map2</span><span class="p">[</span><span class="n">s2</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">m</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
-      <span class="n">map2</span><span class="p">[</span><span class="n">s2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">m</span><span class="p">)</span> <span class="o">--</span><span class="n">map2</span><span class="p">[</span><span class="n">s2</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">m</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">];</span>
+      <span class="o">++</span><span class="n">map2</span><span class="p">[</span><span class="n">s2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">];</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">map1</span> <span class="o">==</span> <span class="n">map2</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
     <span class="p">}</span>
 

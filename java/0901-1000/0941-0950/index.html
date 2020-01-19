@@ -6489,9 +6489,9 @@
     <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
 
     <span class="k">while</span> <span class="o">(</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">A</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">A</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">A</span><span class="o">[</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span>
-      <span class="n">l</span><span class="o">++;</span>
+      <span class="o">++</span><span class="n">l</span><span class="o">;</span>
     <span class="k">while</span> <span class="o">(</span><span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">A</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">A</span><span class="o">[</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span>
-      <span class="n">r</span><span class="o">--;</span>
+      <span class="o">--</span><span class="n">r</span><span class="o">;</span>
 
     <span class="k">return</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">A</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="o">;</span>
   <span class="o">}</span>
@@ -6569,13 +6569,13 @@
     <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">deque</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;&gt;();</span>
     <span class="n">deque</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="n">deck</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">--</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
       <span class="n">deque</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="n">deque</span><span class="o">.</span><span class="na">getLast</span><span class="o">());</span>
       <span class="n">deque</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
       <span class="n">deque</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="n">deck</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
     <span class="o">}</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
       <span class="n">deck</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">deque</span><span class="o">.</span><span class="na">pollFirst</span><span class="o">();</span>
 
     <span class="k">return</span> <span class="n">deck</span><span class="o">;</span>
