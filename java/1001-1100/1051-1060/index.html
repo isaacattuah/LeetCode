@@ -6465,8 +6465,140 @@
                   <h1>1051-1060</h1>
                 
                 <h2 id="1051-height-checker-star">1051. Height Checker <a href="https://leetcode.com/problems/height-checker">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">heightChecker</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">heights</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">currentHeight</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">101</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">height</span> <span class="o">:</span> <span class="n">heights</span><span class="o">)</span>
+      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">height</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">height</span> <span class="o">:</span> <span class="n">heights</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">while</span> <span class="o">(</span><span class="n">count</span><span class="o">[</span><span class="n">currentHeight</span><span class="o">]</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="o">++</span><span class="n">currentHeight</span><span class="o">;</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">height</span> <span class="o">!=</span> <span class="n">currentHeight</span><span class="o">)</span>
+        <span class="o">++</span><span class="n">ans</span><span class="o">;</span>
+      <span class="o">--</span><span class="n">count</span><span class="o">[</span><span class="n">currentHeight</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1052-grumpy-bookstore-owner-starstar">1052. Grumpy Bookstore Owner <a href="https://leetcode.com/problems/grumpy-bookstore-owner">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxSatisfied</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">customers</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">grumpy</span><span class="o">,</span> <span class="kt">int</span> <span class="n">X</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">satisfied</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">madeSatisfied</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">windowSatisfied</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">customers</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">grumpy</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="n">satisfied</span> <span class="o">+=</span> <span class="n">customers</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+      <span class="k">else</span>
+        <span class="n">windowSatisfied</span> <span class="o">+=</span> <span class="n">customers</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">X</span> <span class="o">&amp;&amp;</span> <span class="n">grumpy</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">X</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span>
+        <span class="n">windowSatisfied</span> <span class="o">-=</span> <span class="n">customers</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">X</span><span class="o">];</span>
+      <span class="n">madeSatisfied</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">madeSatisfied</span><span class="o">,</span> <span class="n">windowSatisfied</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">satisfied</span> <span class="o">+</span> <span class="n">madeSatisfied</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1053-previous-permutation-with-one-swap-starstar">1053. Previous Permutation With One Swap <a href="https://leetcode.com/problems/previous-permutation-with-one-swap">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">prevPermOpt1</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+
+    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+
+    <span class="k">while</span> <span class="o">(</span><span class="n">l</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">A</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">&lt;=</span> <span class="n">A</span><span class="o">[</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span>
+      <span class="n">l</span><span class="o">--;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
+      <span class="k">return</span> <span class="n">A</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">A</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="n">A</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">||</span> <span class="n">A</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">==</span> <span class="n">A</span><span class="o">[</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span>
+      <span class="n">r</span><span class="o">--;</span>
+    <span class="n">swap</span><span class="o">(</span><span class="n">A</span><span class="o">,</span> <span class="n">l</span><span class="o">,</span> <span class="n">r</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="n">A</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="o">,</span> <span class="kt">int</span> <span class="n">l</span><span class="o">,</span> <span class="kt">int</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">A</span><span class="o">[</span><span class="n">l</span><span class="o">];</span>
+    <span class="n">A</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">[</span><span class="n">r</span><span class="o">];</span>
+    <span class="n">A</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1054-distant-barcodes-starstar">1054. Distant Barcodes <a href="https://leetcode.com/problems/distant-barcodes">$\star\star$</a></h2>
 <h2 id="1055-shortest-way-to-form-string-starstar">1055. Shortest Way to Form String <a href="https://leetcode.com/problems/shortest-way-to-form-string">$\star\star$</a></h2>
 <h2 id="1056-confusing-number-star">1056. Confusing Number <a href="https://leetcode.com/problems/confusing-number">$\star$</a></h2>

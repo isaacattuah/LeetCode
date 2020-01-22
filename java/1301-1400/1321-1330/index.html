@@ -6414,6 +6414,57 @@
 <h2 id="1324-print-words-vertically-starstar">1324. Print Words Vertically <a href="https://leetcode.com/problems/print-words-vertically">$\star\star$</a></h2>
 <h2 id="1325-delete-leaves-with-a-given-value-starstar">1325. Delete Leaves With a Given Value <a href="https://leetcode.com/problems/delete-leaves-with-a-given-value">$\star\star$</a></h2>
 <h2 id="1326-minimum-number-of-taps-to-open-to-water-a-garden-starstarstar">1326. Minimum Number of Taps to Open to Water a Garden <a href="https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden">$\star\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">minTaps</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">ranges</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">i</span> <span class="o">-</span> <span class="n">ranges</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+      <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">ranges</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+      <span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">],</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">farthest</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="n">farthest</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">farthest</span><span class="o">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">++</span><span class="n">ans</span><span class="o">;</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">farthest</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">end</span> <span class="o">==</span> <span class="n">n</span> <span class="o">?</span> <span class="n">ans</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
