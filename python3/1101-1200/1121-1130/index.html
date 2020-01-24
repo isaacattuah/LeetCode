@@ -6466,6 +6466,44 @@
                 
                 <h2 id="1121-divide-array-into-increasing-sequences-starstarstar">1121. Divide Array Into Increasing Sequences <a href="https://leetcode.com/problems/divide-array-into-increasing-sequences">$\star\star\star$</a></h2>
 <h2 id="1122-relative-sort-array-star">1122. Relative Sort Array <a href="https://leetcode.com/problems/relative-sort-array">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">relativeSortArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">arr2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1001</span>
+
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arr1</span><span class="p">:</span>
+            <span class="n">count</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arr2</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">count</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                <span class="n">count</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1001</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]):</span>
+                <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ans</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1123-lowest-common-ancestor-of-deepest-leaves-starstar">1123. Lowest Common Ancestor of Deepest Leaves <a href="https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves">$\star\star$</a></h2>
 <h2 id="1124-longest-well-performing-interval-starstar">1124. Longest Well-Performing Interval <a href="https://leetcode.com/problems/longest-well-performing-interval">$\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1

@@ -6473,6 +6473,40 @@
 <h2 id="1107-new-users-daily-count-starstar">1107. New Users Daily Count <a href="https://leetcode.com/problems/new-users-daily-count">$\star\star$</a></h2>
 <h2 id="1108-defanging-an-ip-address-star">1108. Defanging an IP Address <a href="https://leetcode.com/problems/defanging-an-ip-address">$\star$</a></h2>
 <h2 id="1109-corporate-flight-bookings-starstar">1109. Corporate Flight Bookings <a href="https://leetcode.com/problems/corporate-flight-bookings">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">corpFlightBookings</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">bookings</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">booking</span> <span class="o">:</span> <span class="n">bookings</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">ans</span><span class="o">[</span><span class="n">booking</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+=</span> <span class="n">booking</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">booking</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">)</span>
+        <span class="n">ans</span><span class="o">[</span><span class="n">booking</span><span class="o">[</span><span class="mi">1</span><span class="o">]]</span> <span class="o">-=</span> <span class="n">booking</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
+      <span class="n">ans</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+=</span> <span class="n">ans</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1110-delete-nodes-and-return-forest-starstar">1110. Delete Nodes And Return Forest <a href="https://leetcode.com/problems/delete-nodes-and-return-forest">$\star\star$</a></h2>
                 
                   
