@@ -6514,6 +6514,36 @@
 <h2 id="1126-active-businesses-starstar">1126. Active Businesses <a href="https://leetcode.com/problems/active-businesses">$\star\star$</a></h2>
 <h2 id="1127-user-purchase-platform-starstarstar">1127. User Purchase Platform <a href="https://leetcode.com/problems/user-purchase-platform">$\star\star\star$</a></h2>
 <h2 id="1128-number-of-equivalent-domino-pairs-star">1128. Number of Equivalent Domino Pairs <a href="https://leetcode.com/problems/number-of-equivalent-domino-pairs">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numEquivDominoPairs</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">dominoes</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">domino</span> <span class="o">:</span> <span class="n">dominoes</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">domino</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">domino</span><span class="o">[</span><span class="mi">1</span><span class="o">])</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">domino</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">domino</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+      <span class="n">ans</span> <span class="o">+=</span> <span class="n">count</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+      <span class="n">count</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">count</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="mi">0</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1129-shortest-path-with-alternating-colors-starstar">1129. Shortest Path with Alternating Colors <a href="https://leetcode.com/problems/shortest-path-with-alternating-colors">$\star\star$</a></h2>
 <h2 id="1130-minimum-cost-tree-from-leaf-values-starstar">1130. Minimum Cost Tree From Leaf Values <a href="https://leetcode.com/problems/minimum-cost-tree-from-leaf-values">$\star\star$</a></h2>
                 

@@ -6468,8 +6468,62 @@
 <h2 id="1142-user-activity-for-the-past-30-days-ii-star">1142. User Activity for the Past 30 Days II <a href="https://leetcode.com/problems/user-activity-for-the-past-30-days-ii">$\star$</a></h2>
 <h2 id="1143-longest-common-subsequence-starstar">1143. Longest Common Subsequence <a href="https://leetcode.com/problems/longest-common-subsequence">$\star\star$</a></h2>
 <h2 id="1144-decrease-elements-to-make-array-zigzag-starstar">1144. Decrease Elements To Make Array Zigzag <a href="https://leetcode.com/problems/decrease-elements-to-make-array-zigzag">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">movesToMakeZigzag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">decreasing</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1001</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="k">else</span> <span class="mi">1001</span>
+            <span class="n">decreasing</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">decreasing</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">decreasing</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1145-binary-tree-coloring-game-starstar">1145. Binary Tree Coloring Game <a href="https://leetcode.com/problems/binary-tree-coloring-game">$\star\star$</a></h2>
 <h2 id="1146-snapshot-array-starstar">1146. Snapshot Array <a href="https://leetcode.com/problems/snapshot-array">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">SnapshotArray</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">map</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snap_id</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">snap_id</span><span class="p">,</span> <span class="n">val</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">snap</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snap_id</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">snap_id</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">snap_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="p">[</span><span class="n">snap_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1147-longest-chunked-palindrome-decomposition-starstarstar">1147. Longest Chunked Palindrome Decomposition <a href="https://leetcode.com/problems/longest-chunked-palindrome-decomposition">$\star\star\star$</a></h2>
 <h2 id="1148-article-views-i-star">1148. Article Views I <a href="https://leetcode.com/problems/article-views-i">$\star$</a></h2>
 <h2 id="1149-article-views-ii-starstar">1149. Article Views II <a href="https://leetcode.com/problems/article-views-ii">$\star\star$</a></h2>
