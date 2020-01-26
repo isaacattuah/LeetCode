@@ -6538,7 +6538,7 @@
 
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">t</span> <span class="o">:</span> <span class="n">time</span><span class="o">)</span> <span class="o">{</span>
       <span class="n">t</span> <span class="o">%=</span> <span class="mi">60</span><span class="o">;</span>
-      <span class="n">ans</span> <span class="o">+=</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">count</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">:</span> <span class="n">count</span><span class="o">[</span><span class="mi">60</span> <span class="o">-</span> <span class="n">t</span><span class="o">];</span>
+      <span class="n">ans</span> <span class="o">+=</span> <span class="n">count</span><span class="o">[(</span><span class="mi">60</span> <span class="o">-</span> <span class="n">t</span><span class="o">)</span> <span class="o">%</span> <span class="mi">60</span><span class="o">];</span>
       <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">t</span><span class="o">];</span>
     <span class="o">}</span>
 
