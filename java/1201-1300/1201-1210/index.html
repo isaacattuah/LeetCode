@@ -6502,12 +6502,154 @@
                 
                 <h2 id="1201-ugly-number-iii-starstar">1201. Ugly Number III <a href="https://leetcode.com/problems/ugly-number-iii">$\star\star$</a></h2>
 <h2 id="1202-smallest-string-with-swaps-starstar">1202. Smallest String With Swaps <a href="https://leetcode.com/problems/smallest-string-with-swaps">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">smallestStringWithSwaps</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">pairs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">StringBuilder</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+    <span class="n">UF</span> <span class="n">uf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UF</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">pair</span> <span class="o">:</span> <span class="n">pairs</span><span class="o">)</span>
+      <span class="n">uf</span><span class="o">.</span><span class="na">union</span><span class="o">(</span><span class="n">pair</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">pair</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">find</span> <span class="o">=</span> <span class="n">uf</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+      <span class="n">map</span><span class="o">.</span><span class="na">putIfAbsent</span><span class="o">(</span><span class="n">find</span><span class="o">,</span> <span class="k">new</span> <span class="n">PriorityQueue</span><span class="o">&lt;&gt;());</span>
+      <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">find</span><span class="o">).</span><span class="na">offer</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
+      <span class="n">ans</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">uf</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">i</span><span class="o">)).</span><span class="na">poll</span><span class="o">());</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kd">class</span> <span class="nc">UF</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">size</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nf">UF</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">size</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+      <span class="n">id</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">size</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="n">id</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">union</span><span class="o">(</span><span class="kt">int</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">q</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">find</span><span class="o">(</span><span class="n">p</span><span class="o">);</span>
+      <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">find</span><span class="o">(</span><span class="n">q</span><span class="o">);</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="o">)</span>
+        <span class="k">return</span><span class="o">;</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">size</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">[</span><span class="n">j</span><span class="o">])</span> <span class="o">{</span>
+        <span class="n">id</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+        <span class="n">size</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">+=</span> <span class="n">size</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">id</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+        <span class="n">size</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+=</span> <span class="n">size</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">find</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">id</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+        <span class="n">id</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">id</span><span class="o">[</span><span class="n">id</span><span class="o">[</span><span class="n">i</span><span class="o">]];</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">id</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+      <span class="o">}</span>
+      <span class="k">return</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1203-sort-items-by-groups-respecting-dependencies-starstarstar">1203. Sort Items by Groups Respecting Dependencies <a href="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies">$\star\star\star$</a></h2>
 <h2 id="1204-last-person-to-fit-in-the-elevator-starstar">1204. Last Person to Fit in the Elevator <a href="https://leetcode.com/problems/last-person-to-fit-in-the-elevator">$\star\star$</a></h2>
 <h2 id="1205-monthly-transactions-ii-starstar">1205. Monthly Transactions II <a href="https://leetcode.com/problems/monthly-transactions-ii">$\star\star$</a></h2>
 <h2 id="1206-design-skiplist-starstarstar">1206. Design Skiplist <a href="https://leetcode.com/problems/design-skiplist">$\star\star\star$</a></h2>
 <h2 id="1207-unique-number-of-occurrences-star">1207. Unique Number of Occurrences <a href="https://leetcode.com/problems/unique-number-of-occurrences">$\star$</a></h2>
 <h2 id="1208-get-equal-substrings-within-budget-starstar">1208. Get Equal Substrings Within Budget <a href="https://leetcode.com/problems/get-equal-substrings-within-budget">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">equalSubstring</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="n">String</span> <span class="n">t</span><span class="o">,</span> <span class="kt">int</span> <span class="n">maxCost</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">maxCost</span> <span class="o">-=</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">maxCost</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="n">maxCost</span> <span class="o">+=</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span><span class="o">)</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span><span class="o">++));</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">j</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1209-remove-all-adjacent-duplicates-in-string-ii-starstar">1209. Remove All Adjacent Duplicates in String II <a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii">$\star\star$</a></h2>
 <h2 id="1210-minimum-moves-to-reach-target-with-rotations-starstarstar">1210. Minimum Moves to Reach Target with Rotations <a href="https://leetcode.com/problems/minimum-moves-to-reach-target-with-rotations">$\star\star\star$</a></h2>
                 

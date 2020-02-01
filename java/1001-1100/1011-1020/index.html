@@ -6572,12 +6572,12 @@
 15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">canThreePartsEqualSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">A</span><span class="o">).</span><span class="na">sum</span><span class="o">();</span>
-    <span class="kt">int</span> <span class="n">presum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">prefixSum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">parts</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
 
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">:</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">presum</span> <span class="o">+=</span> <span class="n">a</span><span class="o">;</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">presum</span> <span class="o">==</span> <span class="n">sum</span> <span class="o">*</span> <span class="n">parts</span> <span class="o">/</span> <span class="mi">3</span><span class="o">)</span>
+      <span class="n">prefixSum</span> <span class="o">+=</span> <span class="n">a</span><span class="o">;</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">prefixSum</span> <span class="o">==</span> <span class="n">sum</span> <span class="o">*</span> <span class="n">parts</span> <span class="o">/</span> <span class="mi">3</span><span class="o">)</span>
         <span class="o">++</span><span class="n">parts</span><span class="o">;</span>
     <span class="o">}</span>
 

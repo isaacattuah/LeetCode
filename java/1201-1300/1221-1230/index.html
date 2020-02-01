@@ -6502,6 +6502,56 @@
                 
                 <h2 id="1221-split-a-string-in-balanced-strings-star">1221. Split a String in Balanced Strings <a href="https://leetcode.com/problems/split-a-string-in-balanced-strings">$\star$</a></h2>
 <h2 id="1222-queens-that-can-attack-the-king-starstar">1222. Queens That Can Attack the King <a href="https://leetcode.com/problems/queens-that-can-attack-the-king">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="nf">queensAttacktheKing</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">queens</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">king</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queensSet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">queen</span> <span class="o">:</span> <span class="n">queens</span><span class="o">)</span>
+      <span class="n">queensSet</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">hash</span><span class="o">(</span><span class="n">queen</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">queen</span><span class="o">[</span><span class="mi">1</span><span class="o">]));</span>
+
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">directions</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[][]</span> <span class="o">{</span> <span class="o">{</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">},</span> <span class="o">{</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="mi">0</span> <span class="o">},</span> <span class="o">{</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span> <span class="o">},</span> <span class="o">{</span> <span class="mi">0</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">},</span> <span class="o">{</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1</span> <span class="o">},</span> <span class="o">{</span> <span class="mi">1</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">},</span> <span class="o">{</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span> <span class="o">},</span>
+        <span class="o">{</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span> <span class="o">}</span> <span class="o">};</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">d</span> <span class="o">:</span> <span class="n">directions</span><span class="o">)</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">king</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">d</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">j</span> <span class="o">=</span> <span class="n">king</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">d</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="o">&amp;&amp;</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">j</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="o">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">d</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">d</span><span class="o">[</span><span class="mi">1</span><span class="o">])</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">queensSet</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">hash</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">)))</span> <span class="o">{</span>
+          <span class="n">ans</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">));</span>
+          <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">hash</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="n">j</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1223-dice-roll-simulation-starstar">1223. Dice Roll Simulation <a href="https://leetcode.com/problems/dice-roll-simulation">$\star\star$</a></h2>
 <h2 id="1224-maximum-equal-frequency-starstarstar">1224. Maximum Equal Frequency <a href="https://leetcode.com/problems/maximum-equal-frequency">$\star\star\star$</a></h2>
 <h2 id="1225-report-contiguous-dates-starstarstar">1225. Report Contiguous Dates <a href="https://leetcode.com/problems/report-contiguous-dates">$\star\star\star$</a></h2>

@@ -6507,6 +6507,28 @@
 <h2 id="1215-stepping-numbers-starstar">1215. Stepping Numbers <a href="https://leetcode.com/problems/stepping-numbers">$\star\star$</a></h2>
 <h2 id="1216-valid-palindrome-iii-starstarstar">1216. Valid Palindrome III <a href="https://leetcode.com/problems/valid-palindrome-iii">$\star\star\star$</a></h2>
 <h2 id="1217-play-with-chips-star">1217. Play with Chips <a href="https://leetcode.com/problems/play-with-chips">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">minCostToMoveChips</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">chips</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">chip</span> <span class="p">:</span> <span class="n">chips</span><span class="p">)</span> <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">chip</span> <span class="o">%</span> <span class="mi">2</span><span class="p">];</span>
+
+    <span class="k">return</span> <span class="nf">min</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">count</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1218-longest-arithmetic-subsequence-of-given-difference-starstar">1218. Longest Arithmetic Subsequence of Given Difference <a href="https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference">$\star\star$</a></h2>
 <h2 id="1219-path-with-maximum-gold-starstar">1219. Path with Maximum Gold <a href="https://leetcode.com/problems/path-with-maximum-gold">$\star\star$</a></h2>
 <h2 id="1220-count-vowels-permutation-starstarstar">1220. Count Vowels Permutation <a href="https://leetcode.com/problems/count-vowels-permutation">$\star\star\star$</a></h2>

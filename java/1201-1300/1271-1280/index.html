@@ -6505,8 +6505,76 @@
 <h2 id="1273-delete-tree-nodes-starstar">1273. Delete Tree Nodes <a href="https://leetcode.com/problems/delete-tree-nodes">$\star\star$</a></h2>
 <h2 id="1274-number-of-ships-in-a-rectangle-starstarstar">1274. Number of Ships in a Rectangle <a href="https://leetcode.com/problems/number-of-ships-in-a-rectangle">$\star\star\star$</a></h2>
 <h2 id="1275-find-winner-on-a-tic-tac-toe-game-star">1275. Find Winner on a Tic Tac Toe Game <a href="https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">tictactoe</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">moves</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">row</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span>
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">col</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">diag1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">diag2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">moves</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">moves</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">];</span>
+      <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">moves</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">1</span><span class="o">];</span>
+      <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="o">;</span>
+      <span class="k">if</span> <span class="o">(++</span><span class="n">row</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">r</span><span class="o">]</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">||</span> <span class="o">++</span><span class="n">col</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">||</span> <span class="n">r</span> <span class="o">==</span> <span class="n">c</span> <span class="o">&amp;&amp;</span> <span class="o">++</span><span class="n">diag1</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">||</span> <span class="n">r</span> <span class="o">+</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="o">++</span><span class="n">diag2</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="mi">3</span><span class="o">)</span>
+        <span class="k">return</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s">&quot;A&quot;</span> <span class="o">:</span> <span class="s">&quot;B&quot;</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">moves</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">9</span> <span class="o">?</span> <span class="s">&quot;Draw&quot;</span> <span class="o">:</span> <span class="s">&quot;Pending&quot;</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1276-number-of-burgers-with-no-waste-of-ingredients-starstar">1276. Number of Burgers with No Waste of Ingredients <a href="https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients">$\star\star$</a></h2>
 <h2 id="1277-count-square-submatrices-with-all-ones-starstar">1277. Count Square Submatrices with All Ones <a href="https://leetcode.com/problems/count-square-submatrices-with-all-ones">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">countSquares</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">matrix</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+          <span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">],</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">],</span> <span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]));</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">];</span>
+      <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1278-palindrome-partitioning-iii-starstarstar">1278. Palindrome Partitioning III <a href="https://leetcode.com/problems/palindrome-partitioning-iii">$\star\star\star$</a></h2>
 <h2 id="1279-traffic-light-controlled-intersection-star">1279. Traffic Light Controlled Intersection <a href="https://leetcode.com/problems/traffic-light-controlled-intersection">$\star$</a></h2>
 <h2 id="1280-students-and-examinations-star">1280. Students and Examinations <a href="https://leetcode.com/problems/students-and-examinations">$\star$</a></h2>

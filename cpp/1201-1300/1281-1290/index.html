@@ -6507,6 +6507,32 @@
 <h2 id="1285-find-the-start-and-end-number-of-continuous-ranges-starstar">1285. Find the Start and End Number of Continuous Ranges <a href="https://leetcode.com/problems/find-the-start-and-end-number-of-continuous-ranges">$\star\star$</a></h2>
 <h2 id="1286-iterator-for-combination-starstar">1286. Iterator for Combination <a href="https://leetcode.com/problems/iterator-for-combination">$\star\star$</a></h2>
 <h2 id="1287-element-appearing-more-than-25-in-sorted-array-star">1287. Element Appearing More Than 25% In Sorted Array <a href="https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">findSpecialInteger</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">quarter</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">quarter</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">quarter</span><span class="p">])</span> <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+    <span class="k">throw</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1288-remove-covered-intervals-starstar">1288. Remove Covered Intervals <a href="https://leetcode.com/problems/remove-covered-intervals">$\star\star$</a></h2>
 <h2 id="1289-minimum-falling-path-sum-ii-starstarstar">1289. Minimum Falling Path Sum II <a href="https://leetcode.com/problems/minimum-falling-path-sum-ii">$\star\star\star$</a></h2>
 <h2 id="1290-convert-binary-number-in-a-linked-list-to-integer-star">1290. Convert Binary Number in a Linked List to Integer <a href="https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer">$\star$</a></h2>

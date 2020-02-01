@@ -6510,6 +6510,39 @@
 <h2 id="1198-find-smallest-common-element-in-all-rows-starstar">1198. Find Smallest Common Element in All Rows <a href="https://leetcode.com/problems/find-smallest-common-element-in-all-rows">$\star\star$</a></h2>
 <h2 id="1199-minimum-time-to-build-blocks-starstarstar">1199. Minimum Time to Build Blocks <a href="https://leetcode.com/problems/minimum-time-to-build-blocks">$\star\star\star$</a></h2>
 <h2 id="1200-minimum-absolute-difference-star">1200. Minimum Absolute Difference <a href="https://leetcode.com/problems/minimum-absolute-difference">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">minimumAbsDifference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="nb">min</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+        <span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">diff</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">:</span>
+                <span class="nb">min</span> <span class="o">=</span> <span class="n">diff</span>
+                <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="n">diff</span> <span class="o">==</span> <span class="nb">min</span><span class="p">:</span>
+                <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]])</span>
+
+        <span class="k">return</span> <span class="n">ans</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

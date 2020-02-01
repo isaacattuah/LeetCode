@@ -6504,7 +6504,77 @@
 <h2 id="1182-shortest-distance-to-target-color-starstar">1182. Shortest Distance to Target Color <a href="https://leetcode.com/problems/shortest-distance-to-target-color">$\star\star$</a></h2>
 <h2 id="1183-maximum-number-of-ones-starstarstar">1183. Maximum Number of Ones <a href="https://leetcode.com/problems/maximum-number-of-ones">$\star\star\star$</a></h2>
 <h2 id="1184-distance-between-bus-stops-star">1184. Distance Between Bus Stops <a href="https://leetcode.com/problems/distance-between-bus-stops">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">distanceBetweenBusStops</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">destination</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">clockwise</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">counterclockwise</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="n">destination</span><span class="p">:</span>
+            <span class="n">start</span><span class="p">,</span> <span class="n">destination</span> <span class="o">=</span> <span class="n">destination</span><span class="p">,</span> <span class="n">start</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">distance</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">destination</span><span class="p">:</span>
+                <span class="n">clockwise</span> <span class="o">+=</span> <span class="n">d</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">counterclockwise</span> <span class="o">+=</span> <span class="n">d</span>
+
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">clockwise</span><span class="p">,</span> <span class="n">counterclockwise</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1185-day-of-the-week-star">1185. Day of the Week <a href="https://leetcode.com/problems/day-of-the-week">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">dayOfTheWeek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">day</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">year</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">isLeapYear</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span>
+
+        <span class="n">week</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Sunday&quot;</span><span class="p">,</span> <span class="s2">&quot;Monday&quot;</span><span class="p">,</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Wednesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s2">&quot;Friday&quot;</span><span class="p">,</span> <span class="s2">&quot;Saturday&quot;</span><span class="p">]</span>
+        <span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">29</span> <span class="k">if</span> <span class="n">isLeapYear</span><span class="p">(</span>
+            <span class="n">year</span><span class="p">)</span> <span class="k">else</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1971</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">366</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">365</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="n">days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">day</span>
+
+        <span class="k">return</span> <span class="n">week</span><span class="p">[(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1186-maximum-subarray-sum-with-one-deletion-starstar">1186. Maximum Subarray Sum with One Deletion <a href="https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion">$\star\star$</a></h2>
 <h2 id="1187-make-array-strictly-increasing-starstarstar">1187. Make Array Strictly Increasing <a href="https://leetcode.com/problems/make-array-strictly-increasing">$\star\star\star$</a></h2>
 <h2 id="1188-design-bounded-blocking-queue-starstar">1188. Design Bounded Blocking Queue <a href="https://leetcode.com/problems/design-bounded-blocking-queue">$\star\star$</a></h2>

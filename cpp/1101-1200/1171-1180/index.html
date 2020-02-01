@@ -6507,6 +6507,42 @@
 <h2 id="1175-prime-arrangements-star">1175. Prime Arrangements <a href="https://leetcode.com/problems/prime-arrangements">$\star$</a></h2>
 <h2 id="1176-diet-plan-performance-star">1176. Diet Plan Performance <a href="https://leetcode.com/problems/diet-plan-performance">$\star$</a></h2>
 <h2 id="1177-can-make-palindrome-from-substring-starstar">1177. Can Make Palindrome from Substring <a href="https://leetcode.com/problems/can-make-palindrome-from-substring">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">canMakePaliQueries</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">queries</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="nl">query</span> <span class="p">:</span> <span class="n">queries</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">odds</span> <span class="o">=</span> <span class="n">__builtin_popcount</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">query</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="n">dp</span><span class="p">[</span><span class="n">query</span><span class="p">[</span><span class="mi">0</span><span class="p">]]);</span>
+      <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">odds</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">query</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1178-number-of-valid-words-for-each-puzzle-starstarstar">1178. Number of Valid Words for Each Puzzle <a href="https://leetcode.com/problems/number-of-valid-words-for-each-puzzle">$\star\star\star$</a></h2>
 <h2 id="1179-reformat-department-table-star">1179. Reformat Department Table <a href="https://leetcode.com/problems/reformat-department-table">$\star$</a></h2>
 <h2 id="1180-count-substrings-with-only-one-distinct-letter-star">1180. Count Substrings with Only One Distinct Letter <a href="https://leetcode.com/problems/count-substrings-with-only-one-distinct-letter">$\star$</a></h2>

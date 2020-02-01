@@ -6509,7 +6509,74 @@
 <h2 id="1167-minimum-cost-to-connect-sticks-starstar">1167. Minimum Cost to Connect Sticks <a href="https://leetcode.com/problems/minimum-cost-to-connect-sticks">$\star\star$</a></h2>
 <h2 id="1168-optimize-water-distribution-in-a-village-starstarstar">1168. Optimize Water Distribution in a Village <a href="https://leetcode.com/problems/optimize-water-distribution-in-a-village">$\star\star\star$</a></h2>
 <h2 id="1169-invalid-transactions-starstar">1169. Invalid Transactions <a href="https://leetcode.com/problems/invalid-transactions">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">invalidTransactions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transactions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="nb">dict</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">transaction</span> <span class="ow">in</span> <span class="n">transactions</span><span class="p">:</span>
+            <span class="n">name</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">city</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="n">time</span><span class="p">,</span> <span class="n">amount</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+            <span class="nb">dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">time</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="n">city</span><span class="p">})</span>
+
+        <span class="k">for</span> <span class="n">transaction</span> <span class="ow">in</span> <span class="n">transactions</span><span class="p">:</span>
+            <span class="n">name</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">city</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="n">time</span><span class="p">,</span> <span class="n">amount</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+                <span class="n">ans</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">transaction</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">sameName</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sameName</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">60</span> <span class="ow">and</span> <span class="n">sameName</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">city</span><span class="p">:</span>
+                        <span class="n">ans</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">transaction</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ans</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1170-compare-strings-by-frequency-of-the-smallest-character-star">1170. Compare Strings by Frequency of the Smallest Character <a href="https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">numSmallerByFrequency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queries</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">wordsFreq</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">word</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">wordsFreq</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+            <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">-</span> <span class="n">index</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ans</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

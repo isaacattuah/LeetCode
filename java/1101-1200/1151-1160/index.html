@@ -6510,6 +6510,49 @@
 <h2 id="1158-market-analysis-i-starstar">1158. Market Analysis I <a href="https://leetcode.com/problems/market-analysis-i">$\star\star$</a></h2>
 <h2 id="1159-market-analysis-ii-starstarstar">1159. Market Analysis II <a href="https://leetcode.com/problems/market-analysis-ii">$\star\star\star$</a></h2>
 <h2 id="1160-find-words-that-can-be-formed-by-characters-star">1160. Find Words That Can Be Formed by Characters <a href="https://leetcode.com/problems/find-words-that-can-be-formed-by-characters">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">countCharacters</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">words</span><span class="o">,</span> <span class="n">String</span> <span class="n">chars</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">26</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">chars</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span>
+      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">word</span> <span class="o">:</span> <span class="n">words</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="n">tempCount</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">count</span><span class="o">,</span> <span class="n">count</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">word</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span>
+        <span class="k">if</span> <span class="o">(--</span><span class="n">tempCount</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">ans</span> <span class="o">-=</span> <span class="n">word</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+          <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+      <span class="n">ans</span> <span class="o">+=</span> <span class="n">word</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
