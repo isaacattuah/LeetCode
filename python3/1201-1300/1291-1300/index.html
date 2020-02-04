@@ -6607,7 +6607,52 @@
 <h2 id="1297-maximum-number-of-occurrences-of-a-substring-starstar">1297. Maximum Number of Occurrences of a Substring <a href="https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring">$\star\star$</a></h2>
 <h2 id="1298-maximum-candies-you-can-get-from-boxes-starstarstar">1298. Maximum Candies You Can Get from Boxes <a href="https://leetcode.com/problems/maximum-candies-you-can-get-from-boxes">$\star\star\star$</a></h2>
 <h2 id="1299-replace-elements-with-greatest-element-on-right-side-star">1299. Replace Elements with Greatest Element on Right Side <a href="https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">replaceElements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">maxOfRight</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">maxOfRight</span> <span class="o">=</span> <span class="n">maxOfRight</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxOfRight</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">arr</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1300-sum-of-mutated-array-closest-to-target-starstar">1300. Sum of Mutated Array Closest to Target <a href="https://leetcode.com/problems/sum-of-mutated-array-closest-to-target">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findBestValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">prefixSum</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">target</span> <span class="o">-</span> <span class="n">prefixSum</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">ans</span> <span class="o">&lt;=</span> <span class="n">a</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">ans</span>
+            <span class="n">prefixSum</span> <span class="o">+=</span> <span class="n">a</span>
+
+        <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

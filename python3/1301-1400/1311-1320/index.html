@@ -6503,6 +6503,24 @@
                 <h2 id="1311-get-watched-videos-by-your-friends-starstar">1311. Get Watched Videos by Your Friends <a href="https://leetcode.com/problems/get-watched-videos-by-your-friends">$\star\star$</a></h2>
 <h2 id="1312-minimum-insertion-steps-to-make-a-string-palindrome-starstarstar">1312. Minimum Insertion Steps to Make a String Palindrome <a href="https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome">$\star\star\star$</a></h2>
 <h2 id="1313-decompress-run-length-encoded-list-star">1313. Decompress Run-Length Encoded List <a href="https://leetcode.com/problems/decompress-run-length-encoded-list">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">decompressRLElist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="n">ans</span> <span class="o">+=</span> <span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">ans</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1314-matrix-block-sum-starstar">1314. Matrix Block Sum <a href="https://leetcode.com/problems/matrix-block-sum">$\star\star$</a></h2>
 <h2 id="1315-sum-of-nodes-with-even-valued-grandparent-starstar">1315. Sum of Nodes with Even-Valued Grandparent <a href="https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent">$\star\star$</a></h2>
 <h2 id="1316-distinct-echo-substrings-starstarstar">1316. Distinct Echo Substrings <a href="https://leetcode.com/problems/distinct-echo-substrings">$\star\star\star$</a></h2>
