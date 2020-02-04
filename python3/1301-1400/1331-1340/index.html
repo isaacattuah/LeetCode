@@ -6523,10 +6523,42 @@
 
 <h2 id="1332-remove-palindromic-subsequences-star">1332. Remove Palindromic Subsequences <a href="https://leetcode.com/problems/remove-palindromic-subsequences">$\star$</a></h2>
 <h2 id="1333-filter-restaurants-by-vegan-friendly-price-and-distance-starstar">1333. Filter Restaurants by Vegan-Friendly, Price and Distance <a href="https://leetcode.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">filterRestaurants</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">restaurants</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">veganFriendly</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">maxPrice</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">maxDistance</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">restaurants</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">restaurants</span> <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="n">veganFriendly</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="n">maxPrice</span> <span class="ow">and</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">maxDistance</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance-starstar">1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance <a href="https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance">$\star\star$</a></h2>
 <h2 id="1335-minimum-difficulty-of-a-job-schedule-starstarstar">1335. Minimum Difficulty of a Job Schedule <a href="https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule">$\star\star\star$</a></h2>
 <h2 id="1336-number-of-transactions-per-visit-starstarstar">1336. Number of Transactions per Visit <a href="https://leetcode.com/problems/number-of-transactions-per-visit">$\star\star\star$</a></h2>
 <h2 id="1337-the-k-weakest-rows-in-a-matrix-star">1337. The K Weakest Rows in a Matrix <a href="https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">kWeakestRows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mat</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mat</span><span class="p">):</span>
+            <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">sum</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">i</span><span class="p">])</span>
+
+        <span class="n">candidates</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">[:</span><span class="n">k</span><span class="p">]]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1338-reduce-array-size-to-the-half-starstar">1338. Reduce Array Size to The Half <a href="https://leetcode.com/problems/reduce-array-size-to-the-half">$\star\star$</a></h2>
 <h2 id="1339-maximum-product-of-splitted-binary-tree-starstar">1339. Maximum Product of Splitted Binary Tree <a href="https://leetcode.com/problems/maximum-product-of-splitted-binary-tree">$\star\star$</a></h2>
 <h2 id="1340-jump-game-v-starstarstar">1340. Jump Game V <a href="https://leetcode.com/problems/jump-game-v">$\star\star\star$</a></h2>
