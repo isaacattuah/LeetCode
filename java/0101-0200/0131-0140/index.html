@@ -6506,8 +6506,64 @@
 <h2 id="134-gas-station-starstar">134. Gas Station <a href="https://leetcode.com/problems/gas-station">$\star\star$</a></h2>
 <h2 id="135-candy-starstarstar">135. Candy <a href="https://leetcode.com/problems/candy">$\star\star\star$</a></h2>
 <h2 id="136-single-number-star">136. Single Number <a href="https://leetcode.com/problems/single-number">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">singleNumber</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">nums</span><span class="o">)</span>
+      <span class="n">ans</span> <span class="o">^=</span> <span class="n">num</span><span class="o">;</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="137-single-number-ii-starstar">137. Single Number II <a href="https://leetcode.com/problems/single-number-ii">$\star\star$</a></h2>
 <h2 id="138-copy-list-with-random-pointer-starstar">138. Copy List with Random Pointer <a href="https://leetcode.com/problems/copy-list-with-random-pointer">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Node</span> <span class="nf">copyRandomList</span><span class="o">(</span><span class="n">Node</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">head</span><span class="o">))</span>
+      <span class="k">return</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">head</span><span class="o">);</span>
+
+    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">head</span><span class="o">,</span> <span class="k">new</span> <span class="n">Node</span><span class="o">(</span><span class="n">head</span><span class="o">.</span><span class="na">val</span><span class="o">));</span>
+    <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">head</span><span class="o">).</span><span class="na">next</span> <span class="o">=</span> <span class="n">copyRandomList</span><span class="o">(</span><span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">);</span>
+    <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">head</span><span class="o">).</span><span class="na">random</span> <span class="o">=</span> <span class="n">copyRandomList</span><span class="o">(</span><span class="n">head</span><span class="o">.</span><span class="na">random</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">head</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">,</span> <span class="n">Node</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="139-word-break-starstar">139. Word Break <a href="https://leetcode.com/problems/word-break">$\star\star$</a></h2>
 <h2 id="140-word-break-ii-starstarstar">140. Word Break II <a href="https://leetcode.com/problems/word-break-ii">$\star\star\star$</a></h2>
                 
