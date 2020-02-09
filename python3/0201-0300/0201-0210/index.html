@@ -6564,29 +6564,25 @@
 16
 17
 18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">isHappy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="n">slow</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="n">fast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">while</span> <span class="n">n</span><span class="p">:</span>
+                <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="n">n</span> <span class="o">//=</span> <span class="mi">10</span>
+
+            <span class="k">return</span> <span class="nb">sum</span>
+
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">helper</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
         <span class="k">while</span> <span class="n">slow</span> <span class="o">!=</span> <span class="n">fast</span><span class="p">:</span>
-            <span class="n">slow</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">slow</span><span class="p">)</span>
-            <span class="n">fast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">fast</span><span class="p">))</span>
+            <span class="n">slow</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">slow</span><span class="p">)</span>
+            <span class="n">fast</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">helper</span><span class="p">(</span><span class="n">fast</span><span class="p">))</span>
 
-        <span class="k">if</span> <span class="n">slow</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">True</span>
-        <span class="k">return</span> <span class="bp">False</span>
-
-    <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="k">while</span> <span class="n">n</span><span class="p">:</span>
-            <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-            <span class="n">n</span> <span class="o">//=</span> <span class="mi">10</span>
-
-        <span class="k">return</span> <span class="nb">sum</span>
+        <span class="k">return</span> <span class="n">slow</span> <span class="o">==</span> <span class="mi">1</span>
 </pre></div>
 </td></tr></table>
 

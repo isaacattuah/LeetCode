@@ -6543,6 +6543,38 @@
 <h2 id="185-department-top-three-salaries-starstarstar">185. Department Top Three Salaries <a href="https://leetcode.com/problems/department-top-three-salaries">$\star\star\star$</a></h2>
 <h2 id="186-reverse-words-in-a-string-ii-starstar">186. Reverse Words in a String II <a href="https://leetcode.com/problems/reverse-words-in-a-string-ii">$\star\star$</a></h2>
 <h2 id="187-repeated-dna-sequences-starstar">187. Repeated DNA Sequences <a href="https://leetcode.com/problems/repeated-dna-sequences">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">findRepeatedDnaSequences</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+    <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">seen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">String</span> <span class="n">seq</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">10</span><span class="o">);</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">seen</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">seq</span><span class="o">))</span>
+        <span class="n">ans</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">seq</span><span class="o">);</span>
+      <span class="n">seen</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">seq</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">ans</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="188-best-time-to-buy-and-sell-stock-iv-starstarstar">188. Best Time to Buy and Sell Stock IV <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv">$\star\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2

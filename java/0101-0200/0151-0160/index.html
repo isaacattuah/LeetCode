@@ -6537,6 +6537,94 @@
                   <h1>0151-0160</h1>
                 
                 <h2 id="151-reverse-words-in-a-string-starstar">151. Reverse Words in a String <a href="https://leetcode.com/problems/reverse-words-in-a-string">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">reverseWords</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">char</span><span class="o">[]</span> <span class="n">charArray</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+
+    <span class="n">reverse</span><span class="o">(</span><span class="n">charArray</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="n">reverseWords</span><span class="o">(</span><span class="n">charArray</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="n">cleanSpaces</span><span class="o">(</span><span class="n">charArray</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">reverseWords</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">charArray</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">charArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span><span class="o">)</span>
+        <span class="o">++</span><span class="n">i</span><span class="o">;</span>
+      <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">charArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">!=</span> <span class="sc">&#39; &#39;</span><span class="o">)</span>
+        <span class="o">++</span><span class="n">j</span><span class="o">;</span>
+      <span class="n">reverse</span><span class="o">(</span><span class="n">charArray</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="n">String</span> <span class="nf">cleanSpaces</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">charArray</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">charArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span><span class="o">)</span>
+        <span class="o">++</span><span class="n">j</span><span class="o">;</span>
+      <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">charArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">!=</span> <span class="sc">&#39; &#39;</span><span class="o">)</span>
+        <span class="n">charArray</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span> <span class="o">=</span> <span class="n">charArray</span><span class="o">[</span><span class="n">j</span><span class="o">++];</span>
+      <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">charArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39; &#39;</span><span class="o">)</span>
+        <span class="o">++</span><span class="n">j</span><span class="o">;</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">charArray</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+        <span class="n">charArray</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span> <span class="o">=</span> <span class="sc">&#39; &#39;</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">charArray</span><span class="o">).</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">reverse</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">charArray</span><span class="o">,</span> <span class="kt">int</span> <span class="n">l</span><span class="o">,</span> <span class="kt">int</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">char</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">charArray</span><span class="o">[</span><span class="n">l</span><span class="o">];</span>
+      <span class="n">charArray</span><span class="o">[</span><span class="n">l</span><span class="o">++]</span> <span class="o">=</span> <span class="n">charArray</span><span class="o">[</span><span class="n">r</span><span class="o">];</span>
+      <span class="n">charArray</span><span class="o">[</span><span class="n">r</span><span class="o">--]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="152-maximum-product-subarray-starstar">152. Maximum Product Subarray <a href="https://leetcode.com/problems/maximum-product-subarray">$\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
