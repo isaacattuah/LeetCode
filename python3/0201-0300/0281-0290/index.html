@@ -6638,6 +6638,15 @@
 </td></tr></table>
 
 <h2 id="290-word-pattern-star">290. Word Pattern <a href="https://leetcode.com/problems/word-pattern">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">wordPattern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span><span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">pattern</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)]</span> <span class="o">==</span> <span class="p">[</span><span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

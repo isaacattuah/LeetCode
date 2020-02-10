@@ -6538,6 +6538,42 @@
                 
                 <h2 id="241-different-ways-to-add-parentheses-starstar">241. Different Ways to Add Parentheses <a href="https://leetcode.com/problems/different-ways-to-add-parentheses">$\star\star$</a></h2>
 <h2 id="242-valid-anagram-star">242. Valid Anagram <a href="https://leetcode.com/problems/valid-anagram">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAnagram</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="n">String</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">!=</span> <span class="n">t</span><span class="o">.</span><span class="na">length</span><span class="o">())</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">26</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span>
+      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">t</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span>
+      <span class="k">if</span> <span class="o">(--</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="243-shortest-word-distance-star">243. Shortest Word Distance <a href="https://leetcode.com/problems/shortest-word-distance">$\star$</a></h2>
 <h2 id="244-shortest-word-distance-ii-starstar">244. Shortest Word Distance II <a href="https://leetcode.com/problems/shortest-word-distance-ii">$\star\star$</a></h2>
 <h2 id="245-shortest-word-distance-iii-starstar">245. Shortest Word Distance III <a href="https://leetcode.com/problems/shortest-word-distance-iii">$\star\star$</a></h2>

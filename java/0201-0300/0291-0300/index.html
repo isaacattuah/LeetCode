@@ -6545,6 +6545,52 @@
 <h2 id="297-serialize-and-deserialize-binary-tree-starstarstar">297. Serialize and Deserialize Binary Tree <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree">$\star\star\star$</a></h2>
 <h2 id="298-binary-tree-longest-consecutive-sequence-starstar">298. Binary Tree Longest Consecutive Sequence <a href="https://leetcode.com/problems/binary-tree-longest-consecutive-sequence">$\star\star$</a></h2>
 <h2 id="299-bulls-and-cows-star">299. Bulls and Cows <a href="https://leetcode.com/problems/bulls-and-cows">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getHint</span><span class="o">(</span><span class="n">String</span> <span class="n">secret</span><span class="o">,</span> <span class="n">String</span> <span class="n">guess</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">A</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">B</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">secret</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">secret</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">==</span> <span class="n">guess</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">))</span>
+        <span class="o">++</span><span class="n">A</span><span class="o">;</span>
+      <span class="k">else</span> <span class="o">{</span>
+        <span class="o">++</span><span class="n">count1</span><span class="o">[</span><span class="n">secret</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="o">];</span>
+        <span class="o">++</span><span class="n">count2</span><span class="o">[</span><span class="n">guess</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="o">];</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
+      <span class="n">B</span> <span class="o">+=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">count1</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">count2</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+
+    <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">A</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot;A&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">B</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot;B&quot;</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="300-longest-increasing-subsequence-starstar">300. Longest Increasing Subsequence <a href="https://leetcode.com/problems/longest-increasing-subsequence">$\star\star$</a></h2>
                 
                   

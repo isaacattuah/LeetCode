@@ -6540,6 +6540,34 @@
 <h2 id="272-closest-binary-search-tree-value-ii-starstarstar">272. Closest Binary Search Tree Value II <a href="https://leetcode.com/problems/closest-binary-search-tree-value-ii">$\star\star\star$</a></h2>
 <h2 id="273-integer-to-english-words-starstarstar">273. Integer to English Words <a href="https://leetcode.com/problems/integer-to-english-words">$\star\star\star$</a></h2>
 <h2 id="274-h-index-starstar">274. H-Index <a href="https://leetcode.com/problems/h-index">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hIndex</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">citations</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">citations</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+
+    <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">citations</span><span class="o">);</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">citations</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="o">)</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="o">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="275-h-index-ii-starstar">275. H-Index II <a href="https://leetcode.com/problems/h-index-ii">$\star\star$</a></h2>
 <h2 id="276-paint-fence-star">276. Paint Fence <a href="https://leetcode.com/problems/paint-fence">$\star$</a></h2>
 <h2 id="277-find-the-celebrity-starstar">277. Find the Celebrity <a href="https://leetcode.com/problems/find-the-celebrity">$\star\star$</a></h2>

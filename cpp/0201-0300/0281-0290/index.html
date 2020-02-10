@@ -6656,6 +6656,45 @@
 </td></tr></table>
 
 <h2 id="290-word-pattern-star">290. Word Pattern <a href="https://leetcode.com/problems/word-pattern">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="kt">bool</span> <span class="n">wordPattern</span><span class="p">(</span><span class="n">string</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">string</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">pattern</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">charMap</span><span class="p">(</span><span class="mi">26</span><span class="p">);</span>
+    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">strMap</span><span class="p">;</span>
+    <span class="n">istringstream</span> <span class="nf">iss</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">;</span> <span class="n">iss</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">n</span> <span class="o">||</span> <span class="n">charMap</span><span class="p">[</span><span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">strMap</span><span class="p">[</span><span class="n">word</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="n">charMap</span><span class="p">[</span><span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="n">strMap</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

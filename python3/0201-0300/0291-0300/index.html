@@ -6545,6 +6545,18 @@
 <h2 id="297-serialize-and-deserialize-binary-tree-starstarstar">297. Serialize and Deserialize Binary Tree <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree">$\star\star\star$</a></h2>
 <h2 id="298-binary-tree-longest-consecutive-sequence-starstar">298. Binary Tree Longest Consecutive Sequence <a href="https://leetcode.com/problems/binary-tree-longest-consecutive-sequence">$\star\star$</a></h2>
 <h2 id="299-bulls-and-cows-star">299. Bulls and Cows <a href="https://leetcode.com/problems/bulls-and-cows">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">getHint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">secret</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">guess</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">bulls</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">eq</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">guess</span><span class="p">))</span>
+        <span class="n">bovine</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">secret</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">guess</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">guess</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">A</span><span class="si">%d</span><span class="s1">B&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bulls</span><span class="p">,</span> <span class="n">bovine</span> <span class="o">-</span> <span class="n">bulls</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="300-longest-increasing-subsequence-starstar">300. Longest Increasing Subsequence <a href="https://leetcode.com/problems/longest-increasing-subsequence">$\star\star$</a></h2>
                 
                   
