@@ -6554,24 +6554,24 @@
 15
 16
 17
-18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">leastInterval</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">tasks</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">26</span><span class="o">];</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">task</span> <span class="o">:</span> <span class="n">tasks</span><span class="o">)</span>
-      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">task</span> <span class="o">-</span> <span class="sc">&#39;A&#39;</span><span class="o">];</span>
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">leastInterval</span><span class="p">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">tasks</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">26</span><span class="o">]</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">task</span> <span class="p">:</span> <span class="n">tasks</span><span class="p">)</span>
+      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">task</span> <span class="o">-</span> <span class="sc">&#39;A&#39;</span><span class="o">]</span><span class="p">;</span>
 
-    <span class="kt">int</span> <span class="n">maxCount</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">:</span> <span class="n">count</span><span class="o">)</span>
-      <span class="n">maxCount</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxCount</span><span class="o">,</span> <span class="n">c</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">maxCount</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="p">:</span> <span class="n">count</span><span class="p">)</span>
+      <span class="n">maxCount</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxCount</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
 
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="o">(</span><span class="n">maxCount</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="o">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">:</span> <span class="n">count</span><span class="o">)</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">maxCount</span><span class="o">)</span>
-        <span class="o">++</span><span class="n">ans</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxCount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="p">:</span> <span class="n">count</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">maxCount</span><span class="p">)</span>
+        <span class="o">++</span><span class="n">ans</span><span class="p">;</span>
 
-    <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">ans</span><span class="o">,</span> <span class="n">tasks</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">tasks</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6610,35 +6610,35 @@
 26
 27
 28
-29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maximumProduct</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">secondMin</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">secondMax</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">thirdMax</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maximumProduct</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">secondMin</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">secondMax</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">thirdMax</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&lt;=</span> <span class="n">min</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">secondMin</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span>
-        <span class="n">min</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
-      <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&lt;=</span> <span class="n">secondMin</span><span class="o">)</span>
-        <span class="n">secondMin</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;=</span> <span class="n">min</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">secondMin</span> <span class="o">=</span> <span class="n">min</span><span class="p">;</span>
+        <span class="n">min</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;=</span> <span class="n">secondMin</span><span class="p">)</span>
+        <span class="n">secondMin</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
 
-      <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">thirdMax</span> <span class="o">=</span> <span class="n">secondMax</span><span class="o">;</span>
-        <span class="n">secondMax</span> <span class="o">=</span> <span class="n">max</span><span class="o">;</span>
-        <span class="n">max</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
-      <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">secondMax</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">thirdMax</span> <span class="o">=</span> <span class="n">secondMax</span><span class="o">;</span>
-        <span class="n">secondMax</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
-      <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">thirdMax</span><span class="o">)</span>
-        <span class="n">thirdMax</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
-    <span class="o">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">thirdMax</span> <span class="o">=</span> <span class="n">secondMax</span><span class="p">;</span>
+        <span class="n">secondMax</span> <span class="o">=</span> <span class="n">max</span><span class="p">;</span>
+        <span class="n">max</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">secondMax</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">thirdMax</span> <span class="o">=</span> <span class="n">secondMax</span><span class="p">;</span>
+        <span class="n">secondMax</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">thirdMax</span><span class="p">)</span>
+        <span class="n">thirdMax</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">min</span> <span class="o">*</span> <span class="n">secondMin</span> <span class="o">*</span> <span class="n">max</span><span class="o">,</span> <span class="n">max</span> <span class="o">*</span> <span class="n">secondMax</span> <span class="o">*</span> <span class="n">thirdMax</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">min</span> <span class="o">*</span> <span class="n">secondMin</span> <span class="o">*</span> <span class="n">max</span><span class="p">,</span> <span class="n">max</span> <span class="o">*</span> <span class="n">secondMax</span> <span class="o">*</span> <span class="n">thirdMax</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 

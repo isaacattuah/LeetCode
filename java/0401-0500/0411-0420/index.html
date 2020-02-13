@@ -6557,24 +6557,24 @@
 15
 16
 17
-18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">thirdMax</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">pq</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PriorityQueue</span><span class="o">&lt;&gt;();</span>
-    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">thirdMax</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">pq</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">nums</span><span class="o">)</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span><span class="o">))</span> <span class="o">{</span>
-        <span class="n">pq</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">pq</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">)</span>
-          <span class="n">pq</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
-      <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">num</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">pq</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pq</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+          <span class="n">pq</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
+      <span class="p">}</span>
 
-    <span class="k">if</span> <span class="o">(</span><span class="n">pq</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span>
-      <span class="n">pq</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pq</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="n">pq</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
 
-    <span class="k">return</span> <span class="n">pq</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">pq</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 

@@ -6643,7 +6643,7 @@
 
         <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">deque</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">([</span><span class="n">root</span><span class="p">])</span>
-        <span class="n">isLeftToRight</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">isLeftToRight</span> <span class="o">=</span> <span class="kc">True</span>
 
         <span class="k">while</span> <span class="n">deque</span><span class="p">:</span>
             <span class="n">currLevel</span> <span class="o">=</span> <span class="p">[]</span>
@@ -6704,7 +6704,7 @@
     <span class="k">def</span> <span class="nf">buildTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preorder</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">inorder</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
         <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">pLeft</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">pRight</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">iLeft</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">iRight</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">pLeft</span> <span class="o">&gt;</span> <span class="n">pRight</span> <span class="ow">or</span> <span class="n">iLeft</span> <span class="o">&gt;</span> <span class="n">iRight</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">None</span>
+                <span class="k">return</span> <span class="kc">None</span>
 
             <span class="n">i</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="n">preorder</span><span class="p">[</span><span class="n">pLeft</span><span class="p">]]</span>
             <span class="n">curr</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">preorder</span><span class="p">[</span><span class="n">pLeft</span><span class="p">])</span>
@@ -6739,7 +6739,7 @@
     <span class="k">def</span> <span class="nf">buildTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inorder</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">postorder</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
         <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">iLeft</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">iRight</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">pLeft</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">pRight</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">iLeft</span> <span class="o">&gt;</span> <span class="n">iRight</span> <span class="ow">or</span> <span class="n">pLeft</span> <span class="o">&gt;</span> <span class="n">pRight</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">None</span>
+                <span class="k">return</span> <span class="kc">None</span>
 
             <span class="n">i</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="n">postorder</span><span class="p">[</span><span class="n">pRight</span><span class="p">]]</span>
             <span class="n">curr</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">postorder</span><span class="p">[</span><span class="n">pRight</span><span class="p">])</span>
@@ -6820,7 +6820,7 @@
 
     <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">l</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="n">r</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">None</span>
+            <span class="k">return</span> <span class="kc">None</span>
 
         <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
         <span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span>
@@ -6860,10 +6860,10 @@
 25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">sortedListToBST</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
         <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-            <span class="n">nonlocal</span> <span class="n">head</span>
+            <span class="k">nonlocal</span> <span class="n">head</span>
 
             <span class="k">if</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="n">r</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">None</span>
+                <span class="k">return</span> <span class="kc">None</span>
 
             <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
 
@@ -6902,7 +6902,7 @@
 14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">True</span>
+            <span class="k">return</span> <span class="kc">True</span>
 
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxDepth</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxDepth</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="ow">and</span> \
             <span class="bp">self</span><span class="o">.</span><span class="n">isBalanced</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> \

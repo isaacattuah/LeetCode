@@ -6556,23 +6556,23 @@
 14
 15
 16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasGroupsSizeX</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">deck</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numCounts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">d</span> <span class="o">:</span> <span class="n">deck</span><span class="o">)</span>
-      <span class="n">numCounts</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">d</span><span class="o">,</span> <span class="n">numCounts</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">d</span><span class="o">,</span> <span class="mi">0</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasGroupsSizeX</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">deck</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numCounts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">d</span> <span class="p">:</span> <span class="n">deck</span><span class="p">)</span>
+      <span class="n">numCounts</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">numCounts</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 
-    <span class="kt">int</span> <span class="n">gcd</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">value</span> <span class="o">:</span> <span class="n">numCounts</span><span class="o">.</span><span class="na">values</span><span class="o">())</span>
-      <span class="n">gcd</span> <span class="o">=</span> <span class="n">__gcd</span><span class="o">(</span><span class="n">gcd</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">gcd</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">value</span> <span class="p">:</span> <span class="n">numCounts</span><span class="p">.</span><span class="na">values</span><span class="p">())</span>
+      <span class="n">gcd</span> <span class="o">=</span> <span class="n">__gcd</span><span class="p">(</span><span class="n">gcd</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
 
-    <span class="k">return</span> <span class="n">gcd</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="o">;</span>
-  <span class="o">}</span>
+    <span class="k">return</span> <span class="n">gcd</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">__gcd</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">__gcd</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">__gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">__gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="p">:</span> <span class="n">a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6596,26 +6596,26 @@
 17
 18
 19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">partitionDisjoint</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">partitionDisjoint</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
 
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">min</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
-    <span class="n">min</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
-    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">min</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">min</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">--</span><span class="n">i</span><span class="o">)</span>
-      <span class="n">min</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">min</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">],</span> <span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">min</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">min</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">,</span> <span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">max</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">max</span><span class="o">,</span> <span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">max</span> <span class="o">&lt;=</span> <span class="n">min</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span>
-        <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">max</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">max</span><span class="p">,</span> <span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">max</span> <span class="o">&lt;=</span> <span class="n">min</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">();</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6640,25 +6640,25 @@
 16
 17
 18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxSubarraySumCircular</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">totalSum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">currMaxSum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">currMinSum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">maxSum</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">minSum</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxSubarraySumCircular</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">totalSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">currMaxSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">currMinSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">maxSum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">minSum</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">:</span> <span class="n">A</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">totalSum</span> <span class="o">+=</span> <span class="n">a</span><span class="o">;</span>
-      <span class="n">currMaxSum</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">currMaxSum</span> <span class="o">+</span> <span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
-      <span class="n">currMinSum</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">currMinSum</span> <span class="o">+</span> <span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
-      <span class="n">maxSum</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxSum</span><span class="o">,</span> <span class="n">currMaxSum</span><span class="o">);</span>
-      <span class="n">minSum</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">minSum</span><span class="o">,</span> <span class="n">currMinSum</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">:</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">totalSum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">;</span>
+      <span class="n">currMaxSum</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">currMaxSum</span> <span class="o">+</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+      <span class="n">currMinSum</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">currMinSum</span> <span class="o">+</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+      <span class="n">maxSum</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxSum</span><span class="p">,</span> <span class="n">currMaxSum</span><span class="p">);</span>
+      <span class="n">minSum</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">minSum</span><span class="p">,</span> <span class="n">currMinSum</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">maxSum</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">maxSum</span> <span class="o">:</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxSum</span><span class="o">,</span> <span class="n">totalSum</span> <span class="o">-</span> <span class="n">minSum</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">maxSum</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">maxSum</span> <span class="p">:</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxSum</span><span class="p">,</span> <span class="n">totalSum</span> <span class="o">-</span> <span class="n">minSum</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 

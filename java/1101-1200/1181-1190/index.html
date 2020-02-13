@@ -6560,27 +6560,27 @@
 18
 19
 20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">distanceBetweenBusStops</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">distance</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">destination</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">clockwise</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">counterclockwise</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">distanceBetweenBusStops</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">distance</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">destination</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">clockwise</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">counterclockwise</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="k">if</span> <span class="o">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">destination</span><span class="o">)</span> <span class="o">{</span>
-      <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">start</span><span class="o">;</span>
-      <span class="n">start</span> <span class="o">=</span> <span class="n">destination</span><span class="o">;</span>
-      <span class="n">destination</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">destination</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+      <span class="n">start</span> <span class="o">=</span> <span class="n">destination</span><span class="p">;</span>
+      <span class="n">destination</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">start</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">destination</span><span class="o">)</span>
-        <span class="n">clockwise</span> <span class="o">+=</span> <span class="n">distance</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">start</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">destination</span><span class="p">)</span>
+        <span class="n">clockwise</span> <span class="o">+=</span> <span class="n">distance</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
       <span class="k">else</span>
-        <span class="n">counterclockwise</span> <span class="o">+=</span> <span class="n">distance</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-    <span class="o">}</span>
+        <span class="n">counterclockwise</span> <span class="o">+=</span> <span class="n">distance</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">clockwise</span><span class="o">,</span> <span class="n">counterclockwise</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">clockwise</span><span class="p">,</span> <span class="n">counterclockwise</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6603,25 +6603,25 @@
 16
 17
 18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">dayOfTheWeek</span><span class="o">(</span><span class="kt">int</span> <span class="n">day</span><span class="o">,</span> <span class="kt">int</span> <span class="n">month</span><span class="o">,</span> <span class="kt">int</span> <span class="n">year</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">String</span><span class="o">[]</span> <span class="n">week</span> <span class="o">=</span> <span class="o">{</span> <span class="s">&quot;Sunday&quot;</span><span class="o">,</span> <span class="s">&quot;Monday&quot;</span><span class="o">,</span> <span class="s">&quot;Tuesday&quot;</span><span class="o">,</span> <span class="s">&quot;Wednesday&quot;</span><span class="o">,</span> <span class="s">&quot;Thursday&quot;</span><span class="o">,</span> <span class="s">&quot;Friday&quot;</span><span class="o">,</span> <span class="s">&quot;Saturday&quot;</span> <span class="o">};</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">days</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">31</span><span class="o">,</span> <span class="n">isLeapYear</span><span class="o">(</span><span class="n">year</span><span class="o">)</span> <span class="o">?</span> <span class="mi">29</span> <span class="o">:</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span> <span class="o">};</span>
-    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">dayOfTheWeek</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">int</span> <span class="n">month</span><span class="p">,</span> <span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">week</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;Sunday&quot;</span><span class="p">,</span> <span class="s">&quot;Monday&quot;</span><span class="p">,</span> <span class="s">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="s">&quot;Wednesday&quot;</span><span class="p">,</span> <span class="s">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s">&quot;Friday&quot;</span><span class="p">,</span> <span class="s">&quot;Saturday&quot;</span> <span class="p">};</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">days</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">31</span><span class="p">,</span> <span class="n">isLeapYear</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">?</span> <span class="mi">29</span> <span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span> <span class="p">};</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1971</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">year</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
-      <span class="n">count</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">366</span> <span class="o">:</span> <span class="mi">365</span><span class="o">;</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
-      <span class="n">count</span> <span class="o">+=</span> <span class="n">days</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="n">day</span><span class="o">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1971</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">year</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">count</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">366</span> <span class="p">:</span> <span class="mi">365</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">count</span> <span class="o">+=</span> <span class="n">days</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="n">day</span><span class="p">;</span>
 
-    <span class="k">return</span> <span class="n">week</span><span class="o">[(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">4</span><span class="o">)</span> <span class="o">%</span> <span class="mi">7</span><span class="o">];</span>
-  <span class="o">}</span>
+    <span class="k">return</span> <span class="n">week</span><span class="o">[</span><span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="o">]</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isLeapYear</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="o">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">||</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isLeapYear</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 

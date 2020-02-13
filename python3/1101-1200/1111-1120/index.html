@@ -6571,16 +6571,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mutex2</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mutex3</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">printFirst</span><span class="p">:</span> <span class="s1">&#39;Callable[[], None]&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">printFirst</span><span class="p">:</span> <span class="s1">&#39;Callable[[], None]&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">printFirst</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mutex2</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">second</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">printSecond</span><span class="p">:</span> <span class="s1">&#39;Callable[[], None]&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">second</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">printSecond</span><span class="p">:</span> <span class="s1">&#39;Callable[[], None]&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mutex2</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
         <span class="n">printSecond</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mutex3</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">third</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">printThird</span><span class="p">:</span> <span class="s1">&#39;Callable[[], None]&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">third</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">printThird</span><span class="p">:</span> <span class="s1">&#39;Callable[[], None]&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mutex3</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
         <span class="n">printThird</span><span class="p">()</span>
 </pre></div>

@@ -6557,26 +6557,26 @@
 17
 18
 19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">relativeSortArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">arr1</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">1001</span><span class="o">];</span>
-    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">relativeSortArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">arr1</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">1001</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">:</span> <span class="n">arr1</span><span class="o">)</span>
-      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">a</span><span class="o">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">:</span> <span class="n">arr1</span><span class="p">)</span>
+      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">a</span><span class="o">]</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">:</span> <span class="n">arr2</span><span class="o">)</span>
-      <span class="k">while</span> <span class="o">(</span><span class="n">count</span><span class="o">[</span><span class="n">a</span><span class="o">]--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="n">ans</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">:</span> <span class="n">arr2</span><span class="p">)</span>
+      <span class="k">while</span> <span class="p">(</span><span class="n">count</span><span class="o">[</span><span class="n">a</span><span class="o">]--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ans</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1001</span><span class="o">;</span> <span class="o">++</span><span class="n">num</span><span class="o">)</span>
-      <span class="k">while</span> <span class="o">(</span><span class="n">count</span><span class="o">[</span><span class="n">num</span><span class="o">]--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="n">ans</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1001</span><span class="p">;</span> <span class="o">++</span><span class="n">num</span><span class="p">)</span>
+      <span class="k">while</span> <span class="p">(</span><span class="n">count</span><span class="o">[</span><span class="n">num</span><span class="o">]--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ans</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
 
-    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6599,20 +6599,20 @@
 11
 12
 13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numEquivDominoPairs</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">dominoes</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numEquivDominoPairs</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">dominoes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">domino</span> <span class="o">:</span> <span class="n">dominoes</span><span class="o">)</span> <span class="o">{</span>
-      <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">domino</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">domino</span><span class="o">[</span><span class="mi">1</span><span class="o">])</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">domino</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">domino</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
-      <span class="n">ans</span> <span class="o">+=</span> <span class="n">count</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-      <span class="n">count</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">count</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="mi">0</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">domino</span> <span class="p">:</span> <span class="n">dominoes</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">domino</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span> <span class="n">domino</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">domino</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span> <span class="n">domino</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+      <span class="n">ans</span> <span class="o">+=</span> <span class="n">count</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 

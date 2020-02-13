@@ -6556,25 +6556,25 @@
 16
 17
 18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkStraightLine</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">coordinates</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">];</span>
-    <span class="kt">int</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">];</span>
-    <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">];</span>
-    <span class="kt">int</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">];</span>
-    <span class="kt">int</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span><span class="o">;</span>
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkStraightLine</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">coordinates</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">coordinates</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">];</span>
-      <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">1</span><span class="o">];</span>
-      <span class="k">if</span> <span class="o">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="o">)</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">!=</span> <span class="o">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="o">)</span> <span class="o">*</span> <span class="n">dx</span><span class="o">)</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">coordinates</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">!=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6595,23 +6595,23 @@
 14
 15
 16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">removeSubfolders</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">folder</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">String</span> <span class="n">prev</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">removeSubfolders</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">folder</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">String</span> <span class="n">prev</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
 
-    <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">folder</span><span class="o">);</span>
+    <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">folder</span><span class="p">);</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">f</span> <span class="o">:</span> <span class="n">folder</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">prev</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="n">prev</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">prev</span><span class="o">.</span><span class="na">length</span><span class="o">())</span> <span class="o">==</span> <span class="sc">&#39;/&#39;</span><span class="o">)</span>
-        <span class="k">continue</span><span class="o">;</span>
-      <span class="n">ans</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
-      <span class="n">prev</span> <span class="o">=</span> <span class="n">f</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">f</span> <span class="p">:</span> <span class="n">folder</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">prev</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="n">prev</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">prev</span><span class="p">.</span><span class="na">length</span><span class="p">())</span> <span class="o">==</span> <span class="sc">&#39;/&#39;</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span>
+      <span class="n">ans</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+      <span class="n">prev</span> <span class="o">=</span> <span class="n">f</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 

@@ -6552,19 +6552,19 @@
 10
 11
 12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">movesToMakeZigzag</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">movesToMakeZigzag</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">:</span> <span class="mi">1001</span><span class="o">;</span>
-      <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">?</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">:</span> <span class="mi">1001</span><span class="o">;</span>
-      <span class="n">decreasing</span><span class="o">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="o">]</span> <span class="o">+=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">l</span><span class="o">,</span> <span class="n">r</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="p">:</span> <span class="mi">1001</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="na">length</span> <span class="o">?</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="p">:</span> <span class="mi">1001</span><span class="p">;</span>
+      <span class="n">decreasing</span><span class="o">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="o">]</span> <span class="o">+=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">decreasing</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">decreasing</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">decreasing</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span> <span class="n">decreasing</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6593,30 +6593,30 @@
 21
 22
 23
-24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">SnapshotArray</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="nf">SnapshotArray</span><span class="o">(</span><span class="kt">int</span> <span class="n">length</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">[</span><span class="n">length</span><span class="o">];</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;();</span>
-      <span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">put</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">SnapshotArray</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="nf">SnapshotArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">[</span><span class="n">length</span><span class="o">]</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+      <span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">set</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">map</span><span class="o">[</span><span class="n">index</span><span class="o">].</span><span class="na">put</span><span class="o">(</span><span class="n">snap_id</span><span class="o">,</span> <span class="n">val</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">map</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">snap_id</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">snap</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">snap_id</span><span class="o">++;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">snap</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">snap_id</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="kt">int</span> <span class="n">snap_id</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">map</span><span class="o">[</span><span class="n">index</span><span class="o">].</span><span class="na">floorEntry</span><span class="o">(</span><span class="n">snap_id</span><span class="o">).</span><span class="na">getValue</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">snap_id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">map</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">.</span><span class="na">floorEntry</span><span class="p">(</span><span class="n">snap_id</span><span class="p">).</span><span class="na">getValue</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="n">TreeMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">map</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">snap_id</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-<span class="o">}</span>
+  <span class="kd">private</span> <span class="n">TreeMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">map</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">snap_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 

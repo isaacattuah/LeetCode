@@ -6551,21 +6551,21 @@
 12
 13
 14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasCycle</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">ListNode</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
-    <span class="n">ListNode</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasCycle</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">ListNode</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
 
-    <span class="k">while</span> <span class="o">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="o">)</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6590,27 +6590,27 @@
 18
 19
 20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">detectCycle</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">ListNode</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
-    <span class="n">ListNode</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">detectCycle</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">ListNode</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
 
-    <span class="k">while</span> <span class="o">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
-        <span class="k">while</span> <span class="o">(</span><span class="n">slow</span> <span class="o">!=</span> <span class="n">fast</span><span class="o">)</span> <span class="o">{</span>
-          <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-          <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">slow</span><span class="o">;</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">slow</span> <span class="o">!=</span> <span class="n">fast</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+          <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">slow</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6663,49 +6663,49 @@
 40
 41
 42
-43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxPoints</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">points</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxPoints</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">points</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">points</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">Map</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-      <span class="kt">int</span><span class="o">[]</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">points</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-      <span class="kt">int</span> <span class="n">samePoints</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-      <span class="kt">int</span> <span class="n">maxPoints</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">points</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">points</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">p1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">p2</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">p1</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">p2</span><span class="o">[</span><span class="mi">1</span><span class="o">])</span>
-          <span class="o">++</span><span class="n">samePoints</span><span class="o">;</span>
-        <span class="k">else</span> <span class="o">{</span>
-          <span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">getSlope</span><span class="o">(</span><span class="n">p1</span><span class="o">,</span> <span class="n">p2</span><span class="o">);</span>
-          <span class="n">count</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">slope</span><span class="o">,</span> <span class="n">count</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">slope</span><span class="o">,</span> <span class="mi">0</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
-          <span class="n">maxPoints</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxPoints</span><span class="o">,</span> <span class="n">count</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">slope</span><span class="o">));</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-      <span class="n">ans</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">ans</span><span class="o">,</span> <span class="n">samePoints</span> <span class="o">+</span> <span class="n">maxPoints</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">points</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Map</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">points</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">samePoints</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">maxPoints</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">points</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">points</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">p2</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">p1</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">p2</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+          <span class="o">++</span><span class="n">samePoints</span><span class="p">;</span>
+        <span class="k">else</span> <span class="p">{</span>
+          <span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">getSlope</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+          <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+          <span class="n">maxPoints</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxPoints</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">slope</span><span class="p">));</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">ans</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">samePoints</span> <span class="o">+</span> <span class="n">maxPoints</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
-  <span class="o">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">getSlope</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">p1</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">p2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">p2</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">-</span> <span class="n">p1</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
-    <span class="kt">int</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">p2</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">p1</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>
+  <span class="kd">private</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">getSlope</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">p2</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">-</span> <span class="n">p1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">p2</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">p1</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
 
-    <span class="k">if</span> <span class="o">(</span><span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;(</span><span class="mi">0</span><span class="o">,</span> <span class="n">p1</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;(</span><span class="n">p1</span><span class="o">[</span><span class="mi">1</span><span class="o">],</span> <span class="mi">0</span><span class="o">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">p1</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 
-    <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">gcd</span><span class="o">(</span><span class="n">dx</span><span class="o">,</span> <span class="n">dy</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">);</span>
 
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;(</span><span class="n">dx</span> <span class="o">/</span> <span class="n">d</span><span class="o">,</span> <span class="n">dy</span> <span class="o">/</span> <span class="n">d</span><span class="o">);</span>
-  <span class="o">}</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">dx</span> <span class="o">/</span> <span class="n">d</span><span class="p">,</span> <span class="n">dy</span> <span class="o">/</span> <span class="n">d</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">gcd</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">a</span> <span class="o">:</span> <span class="n">gcd</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">a</span> <span class="p">:</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6736,33 +6736,33 @@
 24
 25
 26
-27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">evalRPN</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">evalRPN</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">token</span> <span class="o">:</span> <span class="n">tokens</span><span class="o">)</span>
-      <span class="k">switch</span> <span class="o">(</span><span class="n">token</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">case</span> <span class="s">&quot;+&quot;</span><span class="o">:</span>
-        <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">()</span> <span class="o">+</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
-        <span class="k">break</span><span class="o">;</span>
-      <span class="k">case</span> <span class="s">&quot;-&quot;</span><span class="o">:</span>
-        <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(-</span><span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">()</span> <span class="o">+</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
-        <span class="k">break</span><span class="o">;</span>
-      <span class="k">case</span> <span class="s">&quot;*&quot;</span><span class="o">:</span>
-        <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">()</span> <span class="o">*</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
-        <span class="k">break</span><span class="o">;</span>
-      <span class="k">case</span> <span class="s">&quot;/&quot;</span><span class="o">:</span>
-        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
-        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
-        <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="o">);</span>
-        <span class="k">break</span><span class="o">;</span>
-      <span class="k">default</span><span class="o">:</span>
-        <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">token</span><span class="o">));</span>
-      <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">token</span> <span class="p">:</span> <span class="n">tokens</span><span class="p">)</span>
+      <span class="k">switch</span> <span class="p">(</span><span class="n">token</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="s">&quot;+&quot;</span><span class="p">:</span>
+        <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">()</span> <span class="o">+</span> <span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="s">&quot;-&quot;</span><span class="p">:</span>
+        <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="o">-</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">()</span> <span class="o">+</span> <span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="s">&quot;*&quot;</span><span class="p">:</span>
+        <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">()</span> <span class="o">*</span> <span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="s">&quot;/&quot;</span><span class="p">:</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+        <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">default</span><span class="p">:</span>
+        <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">token</span><span class="p">));</span>
+      <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">stack</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
                 

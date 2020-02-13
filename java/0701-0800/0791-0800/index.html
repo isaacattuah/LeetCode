@@ -6555,25 +6555,25 @@
 16
 17
 18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">customSortString</span><span class="o">(</span><span class="n">String</span> <span class="n">S</span><span class="o">,</span> <span class="n">String</span> <span class="n">T</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">);</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">26</span><span class="o">];</span>
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">customSortString</span><span class="p">(</span><span class="n">String</span> <span class="n">S</span><span class="p">,</span> <span class="n">String</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">26</span><span class="o">]</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">T</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span>
-      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="p">:</span> <span class="n">T</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span>
+      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">]</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">S</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span>
-      <span class="k">while</span> <span class="o">(</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">]--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="n">c</span><span class="o">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="p">:</span> <span class="n">S</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span>
+      <span class="k">while</span> <span class="p">(</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">]--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="n">c</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="o">;</span> <span class="o">++</span><span class="n">c</span><span class="o">)</span>
-      <span class="k">while</span> <span class="o">(</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">]--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="n">c</span><span class="o">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span>
+      <span class="k">while</span> <span class="p">(</span><span class="n">count</span><span class="o">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">]--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="n">c</span><span class="p">;</span>
 
-    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6619,48 +6619,48 @@
 39
 40
 41
-42</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numMatchingSubseq</span><span class="o">(</span><span class="n">String</span> <span class="n">S</span><span class="o">,</span> <span class="n">String</span><span class="o">[]</span> <span class="n">words</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">word</span> <span class="o">:</span> <span class="n">words</span><span class="o">)</span>
-      <span class="n">insert</span><span class="o">(</span><span class="n">word</span><span class="o">);</span>
+42</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numMatchingSubseq</span><span class="p">(</span><span class="n">String</span> <span class="n">S</span><span class="p">,</span> <span class="n">String</span><span class="o">[]</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">word</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span>
+      <span class="n">insert</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
 
-    <span class="k">return</span> <span class="n">dfs</span><span class="o">(</span><span class="n">S</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">root</span><span class="o">);</span>
-  <span class="o">}</span>
+    <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">root</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kd">class</span> <span class="nc">TrieNode</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="n">TrieNode</span><span class="o">[]</span> <span class="n">children</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="o">[</span><span class="mi">26</span><span class="o">];</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">class</span> <span class="nc">TrieNode</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">TrieNode</span><span class="o">[]</span> <span class="n">children</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="o">[</span><span class="mi">26</span><span class="o">]</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="n">TrieNode</span> <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="o">();</span>
+  <span class="kd">private</span> <span class="n">TrieNode</span> <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="p">();</span>
 
-  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">insert</span><span class="o">(</span><span class="n">String</span> <span class="n">word</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">TrieNode</span> <span class="n">node</span> <span class="o">=</span> <span class="n">root</span><span class="o">;</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">word</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>
-      <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">children</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-        <span class="n">node</span><span class="o">.</span><span class="na">children</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="o">();</span>
-      <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="na">children</span><span class="o">[</span><span class="n">index</span><span class="o">];</span>
-    <span class="o">}</span>
-    <span class="o">++</span><span class="n">node</span><span class="o">.</span><span class="na">count</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="n">String</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TrieNode</span> <span class="n">node</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="p">:</span> <span class="n">word</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">children</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
+        <span class="n">node</span><span class="p">.</span><span class="na">children</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="p">();</span>
+      <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="na">children</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="o">++</span><span class="n">node</span><span class="p">.</span><span class="na">count</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">dfs</span><span class="o">(</span><span class="n">String</span> <span class="n">S</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">,</span> <span class="n">TrieNode</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="na">count</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">String</span> <span class="n">S</span><span class="p">,</span> <span class="kt">int</span> <span class="n">s</span><span class="p">,</span> <span class="n">TrieNode</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="na">count</span><span class="p">;</span>
 
-    <span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">&gt;=</span> <span class="n">S</span><span class="o">.</span><span class="na">length</span><span class="o">())</span>
-      <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">&gt;=</span> <span class="n">S</span><span class="p">.</span><span class="na">length</span><span class="p">())</span>
+      <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">children</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="sc">&#39;a&#39;</span><span class="o">,</span> <span class="n">s</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
-          <span class="n">ans</span> <span class="o">+=</span> <span class="n">dfs</span><span class="o">(</span><span class="n">S</span><span class="o">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">node</span><span class="o">.</span><span class="na">children</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
-      <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">children</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">S</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+          <span class="n">ans</span> <span class="o">+=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">node</span><span class="p">.</span><span class="na">children</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+      <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -6683,23 +6683,23 @@
 14
 15
 16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numSubarrayBoundedMax</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="o">,</span> <span class="kt">int</span> <span class="n">L</span><span class="o">,</span> <span class="kt">int</span> <span class="n">R</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numSubarrayBoundedMax</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">R</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">A</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="o">)</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="n">L</span><span class="o">)</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
-      <span class="n">ans</span> <span class="o">+=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">)</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="n">L</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+      <span class="n">ans</span> <span class="o">+=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
