@@ -2332,6 +2332,66 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cpp/1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+      1351-1360
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cpp/1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+      1361-1370
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cpp/1301-1400/1371-1380.md" title="1371-1380" class="md-nav__link">
+      1371-1380
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cpp/1301-1400/1381-1390.md" title="1381-1390" class="md-nav__link">
+      1381-1390
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cpp/1301-1400/1391-1400.md" title="1391-1400" class="md-nav__link">
+      1391-1400
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -4320,6 +4380,66 @@
   <li class="md-nav__item">
     <a href="../../../java/1301-1400/1341-1350/" title="1341-1350" class="md-nav__link">
       1341-1350
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../java/1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+      1351-1360
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../java/1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+      1361-1370
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../java/1301-1400/1371-1380.md" title="1371-1380" class="md-nav__link">
+      1371-1380
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../java/1301-1400/1381-1390.md" title="1381-1390" class="md-nav__link">
+      1381-1390
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../java/1301-1400/1391-1400.md" title="1391-1400" class="md-nav__link">
+      1391-1400
     </a>
   </li>
 
@@ -6417,6 +6537,66 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+      1351-1360
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+      1361-1370
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1301-1400/1371-1380.md" title="1371-1380" class="md-nav__link">
+      1371-1380
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1301-1400/1381-1390.md" title="1381-1390" class="md-nav__link">
+      1381-1390
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1301-1400/1391-1400.md" title="1391-1400" class="md-nav__link">
+      1391-1400
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -6547,11 +6727,11 @@
 8
 9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">leastInterval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tasks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="nb">dict</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
 
-        <span class="n">maxCount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-        <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxCount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span> <span class="n">value</span> <span class="o">==</span> <span class="n">maxCount</span><span class="p">,</span> <span class="nb">dict</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="n">maxFreq</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">count</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxFreq</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span> <span class="n">value</span> <span class="o">==</span> <span class="n">maxFreq</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
 
         <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">))</span>
 </pre></div>
