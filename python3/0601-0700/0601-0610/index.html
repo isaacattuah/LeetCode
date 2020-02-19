@@ -2338,7 +2338,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cpp/1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../../cpp/1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -4390,7 +4390,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../../java/1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -6543,7 +6543,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -6747,6 +6747,40 @@
 <h2 id="607-sales-person-star">607. Sales Person <a href="https://leetcode.com/problems/sales-person">$\star$</a></h2>
 <h2 id="608-tree-node-starstar">608. Tree Node <a href="https://leetcode.com/problems/tree-node">$\star\star$</a></h2>
 <h2 id="609-find-duplicate-file-in-system-starstar">609. Find Duplicate File in System <a href="https://leetcode.com/problems/find-duplicate-file-in-system">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findDuplicate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paths</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)):</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">filePath</span> <span class="o">=</span> <span class="n">root</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">)]</span>
+                <span class="n">fileContent</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;)&#39;</span><span class="p">)]</span>
+                <span class="k">if</span> <span class="n">fileContent</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                    <span class="n">files</span><span class="p">[</span><span class="n">fileContent</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">files</span><span class="p">[</span><span class="n">fileContent</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">filePath</span> <span class="k">for</span> <span class="n">filePath</span> <span class="ow">in</span> <span class="n">files</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="610-triangle-judgement-star">610. Triangle Judgement <a href="https://leetcode.com/problems/triangle-judgement">$\star$</a></h2>
                 
                   

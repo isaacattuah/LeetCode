@@ -2338,7 +2338,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cpp/1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../../cpp/1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -4390,7 +4390,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../../java/1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -6543,7 +6543,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -6798,6 +6798,27 @@
 </td></tr></table>
 
 <h2 id="690-employee-importance-star">690. Employee Importance <a href="https://leetcode.com/problems/employee-importance">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">getImportance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">employees</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="s1">&#39;Employee&#39;</span><span class="p">],</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">subordinatesImportance</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
+                <span class="n">dfs</span><span class="p">(</span><span class="n">subordinate</span><span class="p">)</span> <span class="k">for</span> <span class="n">subordinate</span> <span class="ow">in</span> <span class="n">idToEmployee</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">subordinates</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">idToEmployee</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">importance</span> <span class="o">+</span> <span class="n">subordinatesImportance</span>
+
+        <span class="n">idToEmployee</span> <span class="o">=</span> <span class="p">{</span><span class="n">employee</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">employee</span> <span class="k">for</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">employees</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

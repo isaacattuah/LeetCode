@@ -2338,7 +2338,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cpp/1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../../cpp/1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -4390,7 +4390,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../../java/1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -6543,7 +6543,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1301-1400/1351-1360.md" title="1351-1360" class="md-nav__link">
+    <a href="../../1301-1400/1351-1360/" title="1351-1360" class="md-nav__link">
       1351-1360
     </a>
   </li>
@@ -6721,6 +6721,32 @@
 <h2 id="703-kth-largest-element-in-a-stream-star">703. Kth Largest Element in a Stream <a href="https://leetcode.com/problems/kth-largest-element-in-a-stream">$\star$</a></h2>
 <h2 id="704-binary-search-star">704. Binary Search <a href="https://leetcode.com/problems/binary-search">$\star$</a></h2>
 <h2 id="705-design-hashset-star">705. Design HashSet <a href="https://leetcode.com/problems/design-hashset">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">MyHashSet</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000001</span>
+
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="706-design-hashmap-star">706. Design HashMap <a href="https://leetcode.com/problems/design-hashmap">$\star$</a></h2>
 <h2 id="707-design-linked-list-starstar">707. Design Linked List <a href="https://leetcode.com/problems/design-linked-list">$\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -6832,6 +6858,51 @@
 <h2 id="708-insert-into-a-sorted-circular-linked-list-starstar">708. Insert into a Sorted Circular Linked List <a href="https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list">$\star\star$</a></h2>
 <h2 id="709-to-lower-case-star">709. To Lower Case <a href="https://leetcode.com/problems/to-lower-case">$\star$</a></h2>
 <h2 id="710-random-pick-with-blacklist-starstarstar">710. Random Pick with Blacklist <a href="https://leetcode.com/problems/random-pick-with-blacklist">$\star\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">blacklist</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validRange</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">blacklist</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">validRange</span><span class="p">:</span>
+                <span class="k">while</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">:</span>
+                    <span class="n">N</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span>
+                <span class="n">N</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">pick</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">validRange</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">value</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
