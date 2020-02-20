@@ -6848,39 +6848,29 @@
 24
 25
 26
-27
-28
-29
-30
-31
-32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
   <span class="n">string</span> <span class="n">shortestCompletingWord</span><span class="p">(</span><span class="n">string</span> <span class="n">licensePlate</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">string</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">ans</span> <span class="o">=</span> <span class="s">&quot;****************&quot;</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">(</span><span class="mi">26</span><span class="p">);</span>
 
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">map</span><span class="p">(</span><span class="mi">26</span><span class="p">);</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">licensePlate</span><span class="p">)</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">isalpha</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="o">++</span><span class="n">map</span><span class="p">[</span><span class="n">tolower</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">isalpha</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">tolower</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">];</span>
 
-    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="n">string</span><span class="o">&amp;</span> <span class="nl">word</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">min</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isMatch</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">map</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
-      <span class="n">min</span> <span class="o">=</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
-      <span class="n">ans</span> <span class="o">=</span> <span class="n">word</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="nl">word</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">ans</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">isMatch</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">word</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
   <span class="p">}</span>
 
  <span class="k">private</span><span class="o">:</span>
-  <span class="kt">bool</span> <span class="n">isMatch</span><span class="p">(</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">word</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">map</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">wordMap</span><span class="p">(</span><span class="mi">26</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">word</span><span class="p">)</span> <span class="o">++</span><span class="n">wordMap</span><span class="p">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">];</span>
+  <span class="kt">bool</span> <span class="n">isMatch</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">word</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">count</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">wordCount</span><span class="p">(</span><span class="mi">26</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">word</span><span class="p">)</span> <span class="o">++</span><span class="n">wordCount</span><span class="p">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">];</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">wordMap</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">map</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">wordCount</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
   <span class="p">}</span>
