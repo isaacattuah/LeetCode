@@ -6754,7 +6754,7 @@
 
     <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">chars</span><span class="p">)</span> <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">];</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="n">string</span><span class="o">&amp;</span> <span class="nl">word</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="nl">word</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">tempCount</span> <span class="o">=</span> <span class="n">count</span><span class="p">;</span>
       <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="nl">c</span> <span class="p">:</span> <span class="n">word</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">--</span><span class="n">tempCount</span><span class="p">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
