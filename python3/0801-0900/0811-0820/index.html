@@ -6751,6 +6751,18 @@
 <h2 id="817-linked-list-components-starstar">817. Linked List Components <a href="https://leetcode.com/problems/linked-list-components">$\star\star$</a></h2>
 <h2 id="818-race-car-starstarstar">818. Race Car <a href="https://leetcode.com/problems/race-car">$\star\star\star$</a></h2>
 <h2 id="819-most-common-word-star">819. Most Common Word <a href="https://leetcode.com/problems/most-common-word">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">mostCommonWord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paragraph</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">banned</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">banned</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">banned</span><span class="p">)</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">,</span> <span class="n">paragraph</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">banned</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="820-short-encoding-of-words-starstar">820. Short Encoding of Words <a href="https://leetcode.com/problems/short-encoding-of-words">$\star\star$</a></h2>
                 
                   

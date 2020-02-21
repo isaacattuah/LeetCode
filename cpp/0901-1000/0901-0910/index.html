@@ -6720,6 +6720,44 @@
 <h2 id="902-numbers-at-most-n-given-digit-set-starstarstar">902. Numbers At Most N Given Digit Set <a href="https://leetcode.com/problems/numbers-at-most-n-given-digit-set">$\star\star\star$</a></h2>
 <h2 id="903-valid-permutations-for-di-sequence-starstarstar">903. Valid Permutations for DI Sequence <a href="https://leetcode.com/problems/valid-permutations-for-di-sequence">$\star\star\star$</a></h2>
 <h2 id="904-fruit-into-baskets-starstar">904. Fruit Into Baskets <a href="https://leetcode.com/problems/fruit-into-baskets">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">totalFruit</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">tree</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tree</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
+      <span class="k">while</span> <span class="p">(</span><span class="n">count</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">--</span><span class="n">count</span><span class="p">[</span><span class="n">tree</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">count</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+        <span class="o">++</span><span class="n">j</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="905-sort-array-by-parity-star">905. Sort Array By Parity <a href="https://leetcode.com/problems/sort-array-by-parity">$\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2

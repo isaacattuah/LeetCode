@@ -6773,6 +6773,42 @@
 <h2 id="817-linked-list-components-starstar">817. Linked List Components <a href="https://leetcode.com/problems/linked-list-components">$\star\star$</a></h2>
 <h2 id="818-race-car-starstarstar">818. Race Car <a href="https://leetcode.com/problems/race-car">$\star\star\star$</a></h2>
 <h2 id="819-most-common-word-star">819. Most Common Word <a href="https://leetcode.com/problems/most-common-word">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">mostCommonWord</span><span class="p">(</span><span class="n">String</span> <span class="n">paragraph</span><span class="p">,</span> <span class="n">String</span><span class="o">[]</span> <span class="n">banned</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">bannedSet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">banned</span><span class="p">));</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="n">paragraph</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot;\\W+&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">).</span><span class="na">toLowerCase</span><span class="p">().</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;\\s+&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">word</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bannedSet</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">ans</span><span class="p">.</span><span class="na">getValue</span><span class="p">())</span>
+          <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">word</span><span class="p">));</span>
+      <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">.</span><span class="na">getKey</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="820-short-encoding-of-words-starstar">820. Short Encoding of Words <a href="https://leetcode.com/problems/short-encoding-of-words">$\star\star$</a></h2>
                 
                   

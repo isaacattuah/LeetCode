@@ -6794,6 +6794,43 @@
 <h2 id="928-minimize-malware-spread-ii-starstarstar">928. Minimize Malware Spread II <a href="https://leetcode.com/problems/minimize-malware-spread-ii">$\star\star\star$</a></h2>
 <h2 id="929-unique-email-addresses-star">929. Unique Email Addresses <a href="https://leetcode.com/problems/unique-email-addresses">$\star$</a></h2>
 <h2 id="930-binary-subarrays-with-sum-starstar">930. Binary Subarrays With Sum <a href="https://leetcode.com/problems/binary-subarrays-with-sum">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numSubarraysWithSum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">S</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">prefixSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+    <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">:</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">prefixSum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">prefixSum</span> <span class="o">-</span> <span class="n">S</span><span class="p">))</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="n">count</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">prefixSum</span> <span class="o">-</span> <span class="n">S</span><span class="p">);</span>
+      <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">prefixSum</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">prefixSum</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

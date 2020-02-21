@@ -6718,6 +6718,46 @@
                 
                 <h2 id="861-score-after-flipping-matrix-starstar">861. Score After Flipping Matrix <a href="https://leetcode.com/problems/score-after-flipping-matrix">$\star\star$</a></h2>
 <h2 id="862-shortest-subarray-with-sum-at-least-k-starstarstar">862. Shortest Subarray with Sum at Least K <a href="https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k">$\star\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">shortestSubarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">prefixSum</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">prefixSum</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefixSum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">deque</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">while</span> <span class="n">deque</span> <span class="ow">and</span> <span class="n">prefixSum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">prefixSum</span><span class="p">[</span><span class="n">deque</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">&gt;=</span> <span class="n">K</span><span class="p">:</span>
+                <span class="n">ans</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="n">deque</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
+            <span class="k">while</span> <span class="n">deque</span> <span class="ow">and</span> <span class="n">prefixSum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">prefixSum</span><span class="p">[</span><span class="n">deque</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]:</span>
+                <span class="n">deque</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">deque</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ans</span> <span class="k">if</span> <span class="n">ans</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="863-all-nodes-distance-k-in-binary-tree-starstar">863. All Nodes Distance K in Binary Tree <a href="https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree">$\star\star$</a></h2>
 <h2 id="864-shortest-path-to-get-all-keys-starstarstar">864. Shortest Path to Get All Keys <a href="https://leetcode.com/problems/shortest-path-to-get-all-keys">$\star\star\star$</a></h2>
 <h2 id="865-smallest-subtree-with-all-the-deepest-nodes-starstar">865. Smallest Subtree with all the Deepest Nodes <a href="https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes">$\star\star$</a></h2>
