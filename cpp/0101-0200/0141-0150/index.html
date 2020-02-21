@@ -6975,7 +6975,7 @@
       <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="n">reverse</span><span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ans</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">reverse</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">ans</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">ans</span><span class="p">));</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
   <span class="p">}</span>
@@ -7032,7 +7032,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">map</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 
     <span class="k">auto</span><span class="o">&amp;</span> <span class="n">node</span> <span class="o">=</span> <span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">];</span>
-    <span class="n">cache</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">cache</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">cache</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
+    <span class="n">cache</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">),</span> <span class="n">cache</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -7040,7 +7040,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
       <span class="k">auto</span><span class="o">&amp;</span> <span class="n">node</span> <span class="o">=</span> <span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">];</span>
       <span class="n">node</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
-      <span class="n">cache</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">cache</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">cache</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
+      <span class="n">cache</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">),</span> <span class="n">cache</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
       <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
 
@@ -7051,7 +7051,7 @@
     <span class="p">}</span>
 
     <span class="n">cache</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">));</span>
-    <span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">);</span>
   <span class="p">}</span>
 
  <span class="k">private</span><span class="o">:</span>

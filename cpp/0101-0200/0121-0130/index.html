@@ -6965,11 +6965,11 @@
   <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">findLadders</span><span class="p">(</span><span class="n">string</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">endWord</span><span class="p">,</span>
                                      <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
-    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set</span><span class="p">(</span><span class="n">wordList</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">wordList</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set</span><span class="p">{</span><span class="n">begin</span><span class="p">(</span><span class="n">wordList</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">wordList</span><span class="p">)};</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">set</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">endWord</span><span class="p">))</span> <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
 
-    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="n">beginWord</span><span class="p">};</span>
+    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set1</span><span class="p">{</span><span class="n">beginWord</span><span class="p">};</span>
     <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">map</span><span class="p">;</span>
     <span class="kt">bool</span> <span class="n">isFound</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 
@@ -6997,7 +6997,7 @@
     <span class="p">}</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">isFound</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span> <span class="o">=</span> <span class="p">{</span><span class="n">beginWord</span><span class="p">};</span>
+      <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">{</span><span class="n">beginWord</span><span class="p">};</span>
       <span class="n">dfs</span><span class="p">(</span><span class="n">map</span><span class="p">,</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">endWord</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -7012,7 +7012,7 @@
       <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
       <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="n">map</span><span class="p">.</span><span class="n">cend</span><span class="p">())</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">map</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="nl">child</span> <span class="p">:</span> <span class="n">map</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="p">{</span>
       <span class="n">path</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">child</span><span class="p">);</span>
@@ -7061,14 +7061,14 @@
 34</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
   <span class="kt">int</span> <span class="n">ladderLength</span><span class="p">(</span><span class="n">string</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">endWord</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set</span><span class="p">(</span><span class="n">wordList</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">wordList</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set</span><span class="p">{</span><span class="n">begin</span><span class="p">(</span><span class="n">wordList</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">wordList</span><span class="p">)};</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">set</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">endWord</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 
     <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="n">beginWord</span><span class="p">};</span>
-    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="n">endWord</span><span class="p">};</span>
+    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set1</span><span class="p">{</span><span class="n">beginWord</span><span class="p">};</span>
+    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">set2</span><span class="p">{</span><span class="n">endWord</span><span class="p">};</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">set1</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">set2</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
       <span class="o">++</span><span class="n">ans</span><span class="p">;</span>
@@ -7115,7 +7115,7 @@
  <span class="k">public</span><span class="o">:</span>
   <span class="kt">int</span> <span class="n">longestConsecutive</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">set</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">set</span><span class="p">{</span><span class="n">begin</span><span class="p">(</span><span class="n">nums</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">nums</span><span class="p">)};</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span>
       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">set</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>

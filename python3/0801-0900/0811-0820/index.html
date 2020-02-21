@@ -6717,6 +6717,32 @@
                   <h1>0811-0820</h1>
                 
                 <h2 id="811-subdomain-visit-count-star">811. Subdomain Visit Count <a href="https://leetcode.com/problems/subdomain-visit-count">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">subdomainVisits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cpdomains</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">cpdomain</span> <span class="ow">in</span> <span class="n">cpdomains</span><span class="p">:</span>
+            <span class="n">num</span><span class="p">,</span> <span class="n">domains</span> <span class="o">=</span> <span class="n">cpdomain</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">num</span><span class="p">,</span> <span class="n">domains</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">domains</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">domains</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">count</span><span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">domains</span><span class="p">[</span><span class="n">i</span><span class="p">:])]</span> <span class="o">+=</span> <span class="n">num</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">domain</span> <span class="k">for</span> <span class="n">domain</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">count</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="812-largest-triangle-area-star">812. Largest Triangle Area <a href="https://leetcode.com/problems/largest-triangle-area">$\star$</a></h2>
 <h2 id="813-largest-sum-of-averages-starstar">813. Largest Sum of Averages <a href="https://leetcode.com/problems/largest-sum-of-averages">$\star\star$</a></h2>
 <h2 id="814-binary-tree-pruning-starstar">814. Binary Tree Pruning <a href="https://leetcode.com/problems/binary-tree-pruning">$\star\star$</a></h2>

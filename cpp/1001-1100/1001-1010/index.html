@@ -6854,7 +6854,7 @@
 15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
   <span class="kt">int</span> <span class="n">largestSumAfterKNegations</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">K</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">sort</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">A</span><span class="p">));</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">K</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
@@ -6862,8 +6862,8 @@
       <span class="o">--</span><span class="n">K</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">accumulate</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span>
-           <span class="p">(</span><span class="n">K</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="o">*</span><span class="n">min_element</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">accumulate</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span>
+           <span class="p">(</span><span class="n">K</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="o">*</span><span class="n">min_element</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">};</span>
 </pre></div>

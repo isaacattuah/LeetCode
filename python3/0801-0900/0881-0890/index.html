@@ -6720,6 +6720,16 @@
 <h2 id="882-reachable-nodes-in-subdivided-graph-starstarstar">882. Reachable Nodes In Subdivided Graph <a href="https://leetcode.com/problems/reachable-nodes-in-subdivided-graph">$\star\star\star$</a></h2>
 <h2 id="883-projection-area-of-3d-shapes-star">883. Projection Area of 3D Shapes <a href="https://leetcode.com/problems/projection-area-of-3d-shapes">$\star$</a></h2>
 <h2 id="884-uncommon-words-from-two-sentences-star">884. Uncommon Words from Two Sentences <a href="https://leetcode.com/problems/uncommon-words-from-two-sentences">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">uncommonFromSentences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">((</span><span class="n">A</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">count</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">freq</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="885-spiral-matrix-iii-starstar">885. Spiral Matrix III <a href="https://leetcode.com/problems/spiral-matrix-iii">$\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2

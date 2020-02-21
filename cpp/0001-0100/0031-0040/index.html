@@ -7190,7 +7190,7 @@
     <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">;</span>
 
-    <span class="n">sort</span><span class="p">(</span><span class="n">candidates</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">candidates</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">candidates</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">candidates</span><span class="p">));</span>
     <span class="n">dfs</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
@@ -7250,7 +7250,7 @@
     <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">;</span>
 
-    <span class="n">sort</span><span class="p">(</span><span class="n">candidates</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">candidates</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">candidates</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">candidates</span><span class="p">));</span>
     <span class="n">dfs</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>

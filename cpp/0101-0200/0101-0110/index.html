@@ -7038,7 +7038,7 @@
         <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span> <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
       <span class="p">}</span>
-      <span class="n">ans</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">currLevel</span><span class="p">);</span>
+      <span class="n">ans</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">ans</span><span class="p">),</span> <span class="n">currLevel</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>

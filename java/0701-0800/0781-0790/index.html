@@ -6717,6 +6717,36 @@
                   <h1>0781-0790</h1>
                 
                 <h2 id="781-rabbits-in-forest-starstar">781. Rabbits in Forest <a href="https://leetcode.com/problems/rabbits-in-forest">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numRabbits</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">answers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">1000</span><span class="o">]</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">answer</span> <span class="p">:</span> <span class="n">answers</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="o">[</span><span class="n">answer</span><span class="o">]</span> <span class="o">%</span> <span class="p">(</span><span class="n">answer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="n">answer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="o">++</span><span class="n">count</span><span class="o">[</span><span class="n">answer</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="782-transform-to-chessboard-starstarstar">782. Transform to Chessboard <a href="https://leetcode.com/problems/transform-to-chessboard">$\star\star\star$</a></h2>
 <h2 id="783-minimum-distance-between-bst-nodes-star">783. Minimum Distance Between BST Nodes <a href="https://leetcode.com/problems/minimum-distance-between-bst-nodes">$\star$</a></h2>
 <h2 id="784-letter-case-permutation-star">784. Letter Case Permutation <a href="https://leetcode.com/problems/letter-case-permutation">$\star$</a></h2>
