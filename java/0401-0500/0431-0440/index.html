@@ -6721,6 +6721,42 @@
 <h2 id="433-minimum-genetic-mutation-starstar">433. Minimum Genetic Mutation <a href="https://leetcode.com/problems/minimum-genetic-mutation">$\star\star$</a></h2>
 <h2 id="434-number-of-segments-in-a-string-star">434. Number of Segments in a String <a href="https://leetcode.com/problems/number-of-segments-in-a-string">$\star$</a></h2>
 <h2 id="435-non-overlapping-intervals-starstar">435. Non-overlapping Intervals <a href="https://leetcode.com/problems/non-overlapping-intervals">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">eraseOverlapIntervals</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">intervals</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">currentEnd</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
+
+    <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">intervals</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">interval</span> <span class="p">:</span> <span class="n">intervals</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">interval</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="n">currentEnd</span><span class="p">)</span>
+        <span class="n">currentEnd</span> <span class="o">=</span> <span class="n">interval</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+      <span class="k">else</span>
+        <span class="o">++</span><span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="436-find-right-interval-starstar">436. Find Right Interval <a href="https://leetcode.com/problems/find-right-interval">$\star\star$</a></h2>
 <h2 id="437-path-sum-iii-star">437. Path Sum III <a href="https://leetcode.com/problems/path-sum-iii">$\star$</a></h2>
 <h2 id="438-find-all-anagrams-in-a-string-starstar">438. Find All Anagrams in a String <a href="https://leetcode.com/problems/find-all-anagrams-in-a-string">$\star\star$</a></h2>
