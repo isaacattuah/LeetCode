@@ -2350,7 +2350,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cpp/1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../../../cpp/1301-1400/1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -4503,7 +4503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -6555,7 +6555,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../../../python3/1301-1400/1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -6769,6 +6769,56 @@
 
 <h2 id="1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance-starstar">1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance <a href="https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance">$\star\star$</a></h2>
 <h2 id="1335-minimum-difficulty-of-a-job-schedule-starstarstar">1335. Minimum Difficulty of a Job Schedule <a href="https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule">$\star\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">minDifficulty</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">jobDifficulty</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">jobDifficulty</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">)</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">][</span><span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">row</span> <span class="p">:</span> <span class="n">dp</span><span class="p">)</span>
+      <span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">dp</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">maxDifficulty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">;</span> <span class="o">--</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">maxDifficulty</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxDifficulty</span><span class="p">,</span> <span class="n">jobDifficulty</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+          <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">k</span><span class="o">]</span><span class="p">,</span> <span class="n">dp</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">maxDifficulty</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">d</span><span class="o">]</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1336-number-of-transactions-per-visit-starstarstar">1336. Number of Transactions per Visit <a href="https://leetcode.com/problems/number-of-transactions-per-visit">$\star\star\star$</a></h2>
 <h2 id="1337-the-k-weakest-rows-in-a-matrix-star">1337. The K Weakest Rows in a Matrix <a href="https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix">$\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1

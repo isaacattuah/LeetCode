@@ -2350,7 +2350,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cpp/1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../../../cpp/1301-1400/1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -4402,7 +4402,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../../../java/1301-1400/1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -6555,7 +6555,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../../1301-1400/1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -6725,6 +6725,44 @@
 <h2 id="937-reorder-data-in-log-files-star">937. Reorder Data in Log Files <a href="https://leetcode.com/problems/reorder-data-in-log-files">$\star$</a></h2>
 <h2 id="938-range-sum-of-bst-star">938. Range Sum of BST <a href="https://leetcode.com/problems/range-sum-of-bst">$\star$</a></h2>
 <h2 id="939-minimum-area-rectangle-starstar">939. Minimum Area Rectangle <a href="https://leetcode.com/problems/minimum-area-rectangle">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">minAreaRect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+        <span class="n">xToYs</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+            <span class="n">xToYs</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">x1</span> <span class="o">==</span> <span class="n">x2</span> <span class="ow">or</span> <span class="n">y1</span> <span class="o">==</span> <span class="n">y2</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">y2</span> <span class="ow">in</span> <span class="n">xToYs</span><span class="p">[</span><span class="n">x1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">y1</span> <span class="ow">in</span> <span class="n">xToYs</span><span class="p">[</span><span class="n">x2</span><span class="p">]:</span>
+                    <span class="n">ans</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">ans</span> <span class="k">if</span> <span class="n">ans</span> <span class="o">&lt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="940-distinct-subsequences-ii-starstarstar">940. Distinct Subsequences II <a href="https://leetcode.com/problems/distinct-subsequences-ii">$\star\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2

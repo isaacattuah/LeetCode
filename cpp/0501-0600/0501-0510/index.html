@@ -2451,7 +2451,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../../1301-1400/1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -4503,7 +4503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../../../java/1301-1400/1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -6555,7 +6555,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1301-1400/1361-1370.md" title="1361-1370" class="md-nav__link">
+    <a href="../../../python3/1301-1400/1361-1370/" title="1361-1370" class="md-nav__link">
       1361-1370
     </a>
   </li>
@@ -6724,6 +6724,62 @@
 <h2 id="506-relative-ranks-star">506. Relative Ranks <a href="https://leetcode.com/problems/relative-ranks">$\star$</a></h2>
 <h2 id="507-perfect-number-star">507. Perfect Number <a href="https://leetcode.com/problems/perfect-number">$\star$</a></h2>
 <h2 id="508-most-frequent-subtree-sum-starstar">508. Most Frequent Subtree Sum <a href="https://leetcode.com/problems/most-frequent-subtree-sum">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">findFrequentTreeSum</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">maxFreq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">count</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">_</span><span class="p">,</span> <span class="n">freq</span><span class="p">]</span> <span class="o">:</span> <span class="n">count</span><span class="p">)</span> <span class="n">maxFreq</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">maxFreq</span><span class="p">,</span> <span class="n">freq</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">sum</span><span class="p">,</span> <span class="n">freq</span><span class="p">]</span> <span class="o">:</span> <span class="n">count</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">freq</span> <span class="o">==</span> <span class="n">maxFreq</span><span class="p">)</span> <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+
+ <span class="k">private</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">dfs</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">count</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">+</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">count</span><span class="p">);</span>
+    <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">sum</span><span class="p">];</span>
+
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="509-fibonacci-number-star">509. Fibonacci Number <a href="https://leetcode.com/problems/fibonacci-number">$\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
