@@ -6719,7 +6719,6 @@
                 <h2 id="951-flip-equivalent-binary-trees-starstar">951. Flip Equivalent Binary Trees <a href="https://leetcode.com/problems/flip-equivalent-binary-trees">$\star\star$</a></h2>
 <h2 id="952-largest-component-size-by-common-factor-starstarstar">952. Largest Component Size by Common Factor <a href="https://leetcode.com/problems/largest-component-size-by-common-factor">$\star\star\star$</a></h2>
 <h2 id="953-verifying-an-alien-dictionary-star">953. Verifying an Alien Dictionary <a href="https://leetcode.com/problems/verifying-an-alien-dictionary">$\star$</a></h2>
-<h2 id="954-array-of-doubled-pairs-starstar">954. Array of Doubled Pairs <a href="https://leetcode.com/problems/array-of-doubled-pairs">$\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -6741,22 +6740,65 @@
 19
 20
 21
-22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAlienSorted</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">words</span><span class="p">,</span> <span class="n">String</span> <span class="n">order</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">order</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="sc">&#39;a&#39;</span><span class="p">));</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">words</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">bigger</span><span class="p">(</span><span class="n">words</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span> <span class="n">words</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="p">,</span> <span class="n">Character</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+  <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">bigger</span><span class="p">(</span><span class="n">String</span> <span class="n">s1</span><span class="p">,</span> <span class="n">String</span> <span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s1</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s2</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">!=</span> <span class="n">s2</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">s2</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+
+    <span class="k">return</span> <span class="n">s1</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">s2</span><span class="p">.</span><span class="na">length</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="954-array-of-doubled-pairs-starstar">954. Array of Doubled Pairs <a href="https://leetcode.com/problems/array-of-doubled-pairs">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">canReorderDoubled</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">:</span> <span class="n">A</span><span class="p">)</span>
       <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 
-    <span class="n">Integer</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[</span><span class="n">A</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-      <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
-    <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="n">A</span><span class="p">).</span><span class="na">boxed</span><span class="p">().</span><span class="na">sorted</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">b</span><span class="p">)).</span><span class="na">mapToInt</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="p">).</span><span class="na">toArray</span><span class="p">();</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">a</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="p">:</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
         <span class="k">continue</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">count</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">||</span> <span class="n">count</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
       <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
       <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="n">count</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
@@ -6771,6 +6813,42 @@
 <h2 id="955-delete-columns-to-make-sorted-ii-starstar">955. Delete Columns to Make Sorted II <a href="https://leetcode.com/problems/delete-columns-to-make-sorted-ii">$\star\star$</a></h2>
 <h2 id="956-tallest-billboard-starstarstar">956. Tallest Billboard <a href="https://leetcode.com/problems/tallest-billboard">$\star\star\star$</a></h2>
 <h2 id="957-prison-cells-after-n-days-starstar">957. Prison Cells After N Days <a href="https://leetcode.com/problems/prison-cells-after-n-days">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">prisonAfterNDays</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">cells</span><span class="p">,</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">firstDayCells</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">cells</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">nextDayCells</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">cells</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">N</span><span class="o">--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">cells</span> <span class="o">=</span> <span class="n">nextDayCells</span><span class="p">.</span><span class="na">clone</span><span class="p">(),</span> <span class="o">++</span><span class="n">day</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">cells</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">nextDayCells</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">cells</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">cells</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">day</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">firstDayCells</span> <span class="o">=</span> <span class="n">nextDayCells</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">nextDayCells</span><span class="p">,</span> <span class="n">firstDayCells</span><span class="p">))</span>
+        <span class="n">N</span> <span class="o">%=</span> <span class="n">day</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">cells</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="958-check-completeness-of-a-binary-tree-starstar">958. Check Completeness of a Binary Tree <a href="https://leetcode.com/problems/check-completeness-of-a-binary-tree">$\star\star$</a></h2>
 <h2 id="959-regions-cut-by-slashes-starstar">959. Regions Cut By Slashes <a href="https://leetcode.com/problems/regions-cut-by-slashes">$\star\star$</a></h2>
 <h2 id="960-delete-columns-to-make-sorted-iii-starstarstar">960. Delete Columns to Make Sorted III <a href="https://leetcode.com/problems/delete-columns-to-make-sorted-iii">$\star\star\star$</a></h2>
