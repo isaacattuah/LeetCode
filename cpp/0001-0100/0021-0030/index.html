@@ -6800,8 +6800,7 @@
 19
 20
 21
-22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
   <span class="n">ListNode</span><span class="o">*</span> <span class="n">mergeKLists</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">*&gt;&amp;</span> <span class="n">lists</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ListNode</span> <span class="n">dummy</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -6811,12 +6810,11 @@
     <span class="p">};</span>
     <span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">*</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">*&gt;</span><span class="p">,</span> <span class="k">decltype</span><span class="p">(</span><span class="n">compare</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">pq</span><span class="p">(</span><span class="n">compare</span><span class="p">);</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">list</span> <span class="p">:</span> <span class="n">lists</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">ListNode</span><span class="o">*&amp;</span> <span class="nl">list</span> <span class="p">:</span> <span class="n">lists</span><span class="p">)</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="n">pq</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">pq</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-      <span class="n">pq</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+      <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">(),</span> <span class="n">pq</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
       <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="n">pq</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
     <span class="p">}</span>
@@ -6850,23 +6848,19 @@
 20
 21
 22
-23
-24
-25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
   <span class="n">ListNode</span><span class="o">*</span> <span class="n">swapPairs</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">head</span> <span class="o">||</span> <span class="o">!</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
-
-    <span class="n">ListNode</span> <span class="nf">dummy</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">ListNode</span> <span class="n">dummy</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
     <span class="n">dummy</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="n">curr</span><span class="p">;</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="o">++</span><span class="n">length</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="n">curr</span><span class="p">;</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="o">++</span><span class="n">length</span><span class="p">;</span>
 
-    <span class="k">auto</span> <span class="n">prev</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">dummy</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">prev</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">dummy</span><span class="p">;</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">auto</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+      <span class="n">ListNode</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
       <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
       <span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
       <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
@@ -6915,14 +6909,14 @@
     <span class="n">ListNode</span> <span class="nf">dummy</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
     <span class="n">dummy</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="n">curr</span><span class="p">;</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="o">++</span><span class="n">length</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="n">curr</span><span class="p">;</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="o">++</span><span class="n">length</span><span class="p">;</span>
 
-    <span class="k">auto</span> <span class="n">prev</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">dummy</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">prev</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">dummy</span><span class="p">;</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="o">/</span> <span class="n">k</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
         <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
         <span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
         <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>

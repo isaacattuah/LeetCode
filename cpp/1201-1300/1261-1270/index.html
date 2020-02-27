@@ -6717,6 +6717,44 @@
                   <h1>1261-1270</h1>
                 
                 <h2 id="1261-find-elements-in-a-contaminated-binary-tree-starstar">1261. Find Elements in a Contaminated Binary Tree <a href="https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">FindElements</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="n">FindElements</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="kt">bool</span> <span class="n">find</span><span class="p">(</span><span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vals</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">target</span><span class="p">);</span> <span class="p">}</span>
+
+ <span class="k">private</span><span class="o">:</span>
+  <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vals</span><span class="p">;</span>
+
+  <span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+    <span class="n">vals</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">val</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">val</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1262-greatest-sum-divisible-by-three-starstar">1262. Greatest Sum Divisible by Three <a href="https://leetcode.com/problems/greatest-sum-divisible-by-three">$\star\star$</a></h2>
 <h2 id="1263-minimum-moves-to-move-a-box-to-their-target-location-starstarstar">1263. Minimum Moves to Move a Box to Their Target Location <a href="https://leetcode.com/problems/minimum-moves-to-move-a-box-to-their-target-location">$\star\star\star$</a></h2>
 <h2 id="1264-page-recommendations-starstar">1264. Page Recommendations <a href="https://leetcode.com/problems/page-recommendations">$\star\star$</a></h2>

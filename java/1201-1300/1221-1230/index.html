@@ -6770,6 +6770,50 @@
 
 <h2 id="1223-dice-roll-simulation-starstar">1223. Dice Roll Simulation <a href="https://leetcode.com/problems/dice-roll-simulation">$\star\star$</a></h2>
 <h2 id="1224-maximum-equal-frequency-starstarstar">1224. Maximum Equal Frequency <a href="https://leetcode.com/problems/maximum-equal-frequency">$\star\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxEqualFreq</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">maxFreq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">count</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">freq</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">currentFreq</span> <span class="o">=</span> <span class="n">count</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="n">freq</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">currentFreq</span><span class="p">,</span> <span class="n">freq</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">currentFreq</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="kt">int</span> <span class="n">updatedFreq</span> <span class="o">=</span> <span class="n">currentFreq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="n">count</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span> <span class="n">updatedFreq</span><span class="p">);</span>
+      <span class="n">freq</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">updatedFreq</span><span class="p">,</span> <span class="n">freq</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">updatedFreq</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="n">maxFreq</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxFreq</span><span class="p">,</span> <span class="n">updatedFreq</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">maxFreq</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">maxFreq</span> <span class="o">*</span> <span class="n">freq</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">maxFreq</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span> <span class="o">||</span> <span class="p">(</span><span class="n">maxFreq</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">freq</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">maxFreq</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1225-report-contiguous-dates-starstarstar">1225. Report Contiguous Dates <a href="https://leetcode.com/problems/report-contiguous-dates">$\star\star\star$</a></h2>
 <h2 id="1226-the-dining-philosophers-starstar">1226. The Dining Philosophers <a href="https://leetcode.com/problems/the-dining-philosophers">$\star\star$</a></h2>
 <h2 id="1227-airplane-seat-assignment-probability-starstar">1227. Airplane Seat Assignment Probability <a href="https://leetcode.com/problems/airplane-seat-assignment-probability">$\star\star$</a></h2>

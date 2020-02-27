@@ -6809,6 +6809,30 @@
 <h2 id="1205-monthly-transactions-ii-starstar">1205. Monthly Transactions II <a href="https://leetcode.com/problems/monthly-transactions-ii">$\star\star$</a></h2>
 <h2 id="1206-design-skiplist-starstarstar">1206. Design Skiplist <a href="https://leetcode.com/problems/design-skiplist">$\star\star\star$</a></h2>
 <h2 id="1207-unique-number-of-occurrences-star">1207. Unique Number of Occurrences <a href="https://leetcode.com/problems/unique-number-of-occurrences">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">uniqueOccurrences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+        <span class="n">occurrences</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">count</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">occurrences</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">occurrences</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1208-get-equal-substrings-within-budget-starstar">1208. Get Equal Substrings Within Budget <a href="https://leetcode.com/problems/get-equal-substrings-within-budget">$\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2

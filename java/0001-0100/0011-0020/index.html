@@ -6973,6 +6973,46 @@
 </td></tr></table>
 
 <h2 id="19-remove-nth-node-from-end-of-list-starstar">19. Remove Nth Node From End of List <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">removeNthFromEnd</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">ListNode</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fast</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">slow</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="20-valid-parentheses-star">20. Valid Parentheses <a href="https://leetcode.com/problems/valid-parentheses">$\star$</a></h2>
                 
                   

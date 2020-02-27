@@ -6776,7 +6776,75 @@
 </td></tr></table>
 
 <h2 id="82-remove-duplicates-from-sorted-list-ii-starstar">82. Remove Duplicates from Sorted List II <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">deleteDuplicates</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span> <span class="n">dummy</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">dummy</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">ListNode</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">dummy</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">head</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">while</span> <span class="p">(</span><span class="n">head</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">head</span><span class="p">.</span><span class="na">val</span> <span class="o">==</span> <span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">val</span><span class="p">)</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">prev</span><span class="p">.</span><span class="na">next</span> <span class="o">==</span> <span class="n">head</span><span class="p">)</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="n">prev</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="k">else</span>
+        <span class="n">prev</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">dummy</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="83-remove-duplicates-from-sorted-list-star">83. Remove Duplicates from Sorted List <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">deleteDuplicates</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">while</span> <span class="p">(</span><span class="n">curr</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="p">.</span><span class="na">val</span> <span class="o">==</span> <span class="n">curr</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">val</span><span class="p">)</span>
+        <span class="n">curr</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="84-largest-rectangle-in-histogram-starstarstar">84. Largest Rectangle in Histogram <a href="https://leetcode.com/problems/largest-rectangle-in-histogram">$\star\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2

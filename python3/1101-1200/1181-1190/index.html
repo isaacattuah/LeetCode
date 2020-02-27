@@ -6795,6 +6795,16 @@
 <h2 id="1187-make-array-strictly-increasing-starstarstar">1187. Make Array Strictly Increasing <a href="https://leetcode.com/problems/make-array-strictly-increasing">$\star\star\star$</a></h2>
 <h2 id="1188-design-bounded-blocking-queue-starstar">1188. Design Bounded Blocking Queue <a href="https://leetcode.com/problems/design-bounded-blocking-queue">$\star\star$</a></h2>
 <h2 id="1189-maximum-number-of-balloons-star">1189. Maximum Number of Balloons <a href="https://leetcode.com/problems/maximum-number-of-balloons">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">maxNumberOfBalloons</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">count</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="n">count</span><span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">count</span><span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">count</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">])</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1190-reverse-substrings-between-each-pair-of-parentheses-starstar">1190. Reverse Substrings Between Each Pair of Parentheses <a href="https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses">$\star\star$</a></h2>
                 
                   

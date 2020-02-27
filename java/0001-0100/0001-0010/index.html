@@ -6746,6 +6746,48 @@
 </td></tr></table>
 
 <h2 id="2-add-two-numbers-starstar">2. Add Two Numbers <a href="https://leetcode.com/problems/add-two-numbers">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">addTwoNumbers</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">l1</span><span class="p">,</span> <span class="n">ListNode</span> <span class="n">l2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span> <span class="n">dummy</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">ListNode</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">dummy</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">carry</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">l1</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">l2</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">carry</span> <span class="o">+=</span> <span class="p">(</span><span class="n">l1</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">l1</span><span class="p">.</span><span class="na">val</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">l2</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">l2</span><span class="p">.</span><span class="na">val</span><span class="p">);</span>
+      <span class="n">curr</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">carry</span> <span class="o">%</span> <span class="mi">10</span><span class="p">);</span>
+      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="n">carry</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">l1</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>
+        <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">l2</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>
+        <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">dummy</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="3-longest-substring-without-repeating-characters-starstar">3. Longest Substring Without Repeating Characters <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters">$\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
