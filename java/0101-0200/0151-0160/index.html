@@ -6922,6 +6922,33 @@
 <h2 id="158-read-n-characters-given-read4-ii-call-multiple-times-starstarstar">158. Read N Characters Given Read4 II - Call multiple times <a href="https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times">$\star\star\star$</a></h2>
 <h2 id="159-longest-substring-with-at-most-two-distinct-characters-starstar">159. Longest Substring with At Most Two Distinct Characters <a href="https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters">$\star\star$</a></h2>
 <h2 id="160-intersection-of-two-linked-lists-star">160. Intersection of Two Linked Lists <a href="https://leetcode.com/problems/intersection-of-two-linked-lists">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">getIntersectionNode</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">headA</span><span class="p">,</span> <span class="n">ListNode</span> <span class="n">headB</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span> <span class="n">a</span> <span class="o">=</span> <span class="n">headA</span><span class="p">;</span>
+    <span class="n">ListNode</span> <span class="n">b</span> <span class="o">=</span> <span class="n">headB</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="n">headB</span> <span class="p">:</span> <span class="n">a</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="n">headA</span> <span class="p">:</span> <span class="n">b</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

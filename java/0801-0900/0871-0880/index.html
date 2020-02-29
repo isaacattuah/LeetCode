@@ -6774,6 +6774,34 @@
 <h2 id="874-walking-robot-simulation-star">874. Walking Robot Simulation <a href="https://leetcode.com/problems/walking-robot-simulation">$\star$</a></h2>
 <h2 id="875-koko-eating-bananas-starstar">875. Koko Eating Bananas <a href="https://leetcode.com/problems/koko-eating-bananas">$\star\star$</a></h2>
 <h2 id="876-middle-of-the-linked-list-star">876. Middle of the Linked List <a href="https://leetcode.com/problems/middle-of-the-linked-list">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">middleNode</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">ListNode</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">slow</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="877-stone-game-starstar">877. Stone Game <a href="https://leetcode.com/problems/stone-game">$\star\star$</a></h2>
 <h2 id="878-nth-magical-number-starstarstar">878. Nth Magical Number <a href="https://leetcode.com/problems/nth-magical-number">$\star\star\star$</a></h2>
 <h2 id="879-profitable-schemes-starstarstar">879. Profitable Schemes <a href="https://leetcode.com/problems/profitable-schemes">$\star\star\star$</a></h2>

@@ -6749,6 +6749,30 @@
 <h2 id="815-bus-routes-starstarstar">815. Bus Routes <a href="https://leetcode.com/problems/bus-routes">$\star\star\star$</a></h2>
 <h2 id="816-ambiguous-coordinates-starstar">816. Ambiguous Coordinates <a href="https://leetcode.com/problems/ambiguous-coordinates">$\star\star$</a></h2>
 <h2 id="817-linked-list-components-starstar">817. Linked List Components <a href="https://leetcode.com/problems/linked-list-components">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">numComponents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">G</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">head</span><span class="o">.</span><span class="n">val</span> <span class="ow">in</span> <span class="n">G</span> <span class="ow">and</span> <span class="p">(</span><span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">val</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">):</span>
+                <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="k">return</span> <span class="n">ans</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="818-race-car-starstarstar">818. Race Car <a href="https://leetcode.com/problems/race-car">$\star\star\star$</a></h2>
 <h2 id="819-most-common-word-star">819. Most Common Word <a href="https://leetcode.com/problems/most-common-word">$\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1

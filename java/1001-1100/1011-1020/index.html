@@ -6933,6 +6933,48 @@
 </td></tr></table>
 
 <h2 id="1019-next-greater-node-in-linked-list-starstar">1019. Next Greater Node In Linked List <a href="https://leetcode.com/problems/next-greater-node-in-linked-list">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">nextLargerNodes</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">head</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span> <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">head</span><span class="p">.</span><span class="na">val</span> <span class="o">&gt;</span> <span class="n">ans</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">()))</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+        <span class="n">ans</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">head</span><span class="p">.</span><span class="na">val</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+      <span class="n">ans</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">head</span><span class="p">.</span><span class="na">val</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span>
+      <span class="n">ans</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">mapToInt</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="p">).</span><span class="na">toArray</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="1020-number-of-enclaves-starstar">1020. Number of Enclaves <a href="https://leetcode.com/problems/number-of-enclaves">$\star\star$</a></h2>
                 
                   

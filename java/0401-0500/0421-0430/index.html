@@ -6772,6 +6772,47 @@
 <h2 id="428-serialize-and-deserialize-n-ary-tree-starstarstar">428. Serialize and Deserialize N-ary Tree <a href="https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree">$\star\star\star$</a></h2>
 <h2 id="429-n-ary-tree-level-order-traversal-starstar">429. N-ary Tree Level Order Traversal <a href="https://leetcode.com/problems/n-ary-tree-level-order-traversal">$\star\star$</a></h2>
 <h2 id="430-flatten-a-multilevel-doubly-linked-list-starstar">430. Flatten a Multilevel Doubly Linked List <a href="https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">Node</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">Node</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">Node</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="na">next</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">curr</span><span class="p">.</span><span class="na">child</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Node</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+        <span class="n">curr</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="na">child</span><span class="p">;</span>
+        <span class="n">curr</span><span class="p">.</span><span class="na">child</span><span class="p">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+        <span class="n">curr</span><span class="p">.</span><span class="na">child</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">Node</span> <span class="n">tail</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">tail</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>
+          <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+        <span class="n">tail</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>
+          <span class="n">next</span><span class="p">.</span><span class="na">prev</span> <span class="o">=</span> <span class="n">tail</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

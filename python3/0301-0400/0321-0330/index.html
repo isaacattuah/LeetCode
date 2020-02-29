@@ -6724,6 +6724,52 @@
 <h2 id="326-power-of-three-star">326. Power of Three <a href="https://leetcode.com/problems/power-of-three">$\star$</a></h2>
 <h2 id="327-count-of-range-sum-starstarstar">327. Count of Range Sum <a href="https://leetcode.com/problems/count-of-range-sum">$\star\star\star$</a></h2>
 <h2 id="328-odd-even-linked-list-starstar">328. Odd Even Linked List <a href="https://leetcode.com/problems/odd-even-linked-list">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">oddEvenList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
+        <span class="n">oddHead</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">evenHead</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">odd</span> <span class="o">=</span> <span class="n">oddHead</span>
+        <span class="n">even</span> <span class="o">=</span> <span class="n">evenHead</span>
+        <span class="n">isOdd</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">isOdd</span><span class="p">:</span>
+                <span class="n">odd</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span>
+                <span class="n">odd</span> <span class="o">=</span> <span class="n">head</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">even</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span>
+                <span class="n">even</span> <span class="o">=</span> <span class="n">head</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+            <span class="n">isOdd</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">isOdd</span>
+
+        <span class="n">even</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">odd</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">evenHead</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="k">return</span> <span class="n">oddHead</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="329-longest-increasing-path-in-a-matrix-starstarstar">329. Longest Increasing Path in a Matrix <a href="https://leetcode.com/problems/longest-increasing-path-in-a-matrix">$\star\star\star$</a></h2>
 <h2 id="330-patching-array-starstarstar">330. Patching Array <a href="https://leetcode.com/problems/patching-array">$\star\star\star$</a></h2>
                 

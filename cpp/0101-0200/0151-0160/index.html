@@ -6947,19 +6947,15 @@
 11
 12
 13
-14
-15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
   <span class="n">ListNode</span><span class="o">*</span> <span class="n">getIntersectionNode</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">headA</span><span class="p">,</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">headB</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">headA</span> <span class="o">||</span> <span class="o">!</span><span class="n">headB</span><span class="p">)</span> <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-
     <span class="n">ListNode</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="n">headA</span><span class="p">;</span>
     <span class="n">ListNode</span><span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="n">headB</span><span class="p">;</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="o">?</span> <span class="nl">headB</span> <span class="p">:</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-      <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="o">?</span> <span class="nl">headA</span> <span class="p">:</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+      <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">?</span> <span class="n">a</span><span class="o">-&gt;</span><span class="nl">next</span> <span class="p">:</span> <span class="n">headB</span><span class="p">;</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">?</span> <span class="n">b</span><span class="o">-&gt;</span><span class="nl">next</span> <span class="p">:</span> <span class="n">headA</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="n">a</span><span class="p">;</span>

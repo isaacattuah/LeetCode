@@ -6749,6 +6749,72 @@
 <h2 id="443-string-compression-star">443. String Compression <a href="https://leetcode.com/problems/string-compression">$\star$</a></h2>
 <h2 id="444-sequence-reconstruction-starstar">444. Sequence Reconstruction <a href="https://leetcode.com/problems/sequence-reconstruction">$\star\star$</a></h2>
 <h2 id="445-add-two-numbers-ii-starstar">445. Add Two Numbers II <a href="https://leetcode.com/problems/add-two-numbers-ii">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">addTwoNumbers</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">l1</span><span class="p">,</span> <span class="n">ListNode</span> <span class="n">l2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Stack</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">&gt;</span> <span class="n">stack1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">Stack</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">&gt;</span> <span class="n">stack2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">l1</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">stack1</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">l1</span><span class="p">);</span>
+      <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">l2</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">stack2</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">l2</span><span class="p">);</span>
+      <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">ListNode</span> <span class="n">head</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">carry</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="o">!</span><span class="n">stack1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">||</span> <span class="o">!</span><span class="n">stack2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stack1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span>
+        <span class="n">carry</span> <span class="o">+=</span> <span class="n">stack1</span><span class="p">.</span><span class="na">pop</span><span class="p">().</span><span class="na">val</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stack2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span>
+        <span class="n">carry</span> <span class="o">+=</span> <span class="n">stack2</span><span class="p">.</span><span class="na">pop</span><span class="p">().</span><span class="na">val</span><span class="p">;</span>
+      <span class="n">ListNode</span> <span class="n">node</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">carry</span> <span class="o">%</span> <span class="mi">10</span><span class="p">);</span>
+      <span class="n">node</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+      <span class="n">head</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+      <span class="n">carry</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="446-arithmetic-slices-ii-subsequence-starstarstar">446. Arithmetic Slices II - Subsequence <a href="https://leetcode.com/problems/arithmetic-slices-ii-subsequence">$\star\star\star$</a></h2>
 <h2 id="447-number-of-boomerangs-star">447. Number of Boomerangs <a href="https://leetcode.com/problems/number-of-boomerangs">$\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
