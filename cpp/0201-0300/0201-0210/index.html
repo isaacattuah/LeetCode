@@ -6839,12 +6839,14 @@
 13
 14
 15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
   <span class="kt">int</span> <span class="n">countPrimes</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">prime</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+
     <span class="n">prime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
     <span class="n">prime</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 

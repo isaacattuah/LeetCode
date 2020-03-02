@@ -6719,7 +6719,87 @@
                 <h2 id="261-graph-valid-tree-starstar">261. Graph Valid Tree <a href="https://leetcode.com/problems/graph-valid-tree">$\star\star$</a></h2>
 <h2 id="262-trips-and-users-starstarstar">262. Trips and Users <a href="https://leetcode.com/problems/trips-and-users">$\star\star\star$</a></h2>
 <h2 id="263-ugly-number-star">263. Ugly Number <a href="https://leetcode.com/problems/ugly-number">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isUgly</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">prime</span> <span class="p">:</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="p">})</span>
+      <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">prime</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">/=</span> <span class="n">prime</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="264-ugly-number-ii-starstar">264. Ugly Number II <a href="https://leetcode.com/problems/ugly-number-ii">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">nthUglyNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">nums</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">next2</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">next3</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">next5</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">next2</span><span class="p">,</span> <span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">next3</span><span class="p">,</span> <span class="n">next5</span><span class="p">));</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">next</span> <span class="o">==</span> <span class="n">next2</span><span class="p">)</span>
+        <span class="o">++</span><span class="n">i2</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">next</span> <span class="o">==</span> <span class="n">next3</span><span class="p">)</span>
+        <span class="o">++</span><span class="n">i3</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">next</span> <span class="o">==</span> <span class="n">next5</span><span class="p">)</span>
+        <span class="o">++</span><span class="n">i5</span><span class="p">;</span>
+      <span class="n">nums</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">nums</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="265-paint-house-ii-starstarstar">265. Paint House II <a href="https://leetcode.com/problems/paint-house-ii">$\star\star\star$</a></h2>
 <h2 id="266-palindrome-permutation-star">266. Palindrome Permutation <a href="https://leetcode.com/problems/palindrome-permutation">$\star$</a></h2>
 <h2 id="267-palindrome-permutation-ii-starstar">267. Palindrome Permutation II <a href="https://leetcode.com/problems/palindrome-permutation-ii">$\star\star$</a></h2>

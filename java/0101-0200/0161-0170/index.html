@@ -6866,6 +6866,18 @@
 </td></tr></table>
 
 <h2 id="168-excel-sheet-column-title-star">168. Excel Sheet Column Title <a href="https://leetcode.com/problems/excel-sheet-column-title">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">convertToTitle</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="p">:</span> <span class="n">convertToTitle</span><span class="p">((</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">26</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="p">(</span><span class="sc">&#39;A&#39;</span> <span class="o">+</span> <span class="p">((</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="169-majority-element-star">169. Majority Element <a href="https://leetcode.com/problems/majority-element">$\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2

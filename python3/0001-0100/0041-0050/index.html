@@ -6793,11 +6793,47 @@
 </td></tr></table>
 
 <h2 id="43-multiply-strings-starstar">43. Multiply Strings <a href="https://leetcode.com/problems/multiply-strings">$\star\star$</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">num2</span><span class="p">))</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+
+        <span class="n">ans</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">multiply</span> <span class="o">=</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">num1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span> <span class="o">*</span> \
+                    <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">num2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
+                <span class="nb">sum</span> <span class="o">=</span> <span class="n">multiply</span> <span class="o">+</span> <span class="n">pos</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+                <span class="n">pos</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">sum</span> <span class="o">//</span> <span class="mi">10</span>
+                <span class="n">pos</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>
+
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="ow">not</span> <span class="n">ans</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">ans</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s1">&#39;0&#39;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">ans</span> <span class="k">else</span> <span class="n">ans</span>
 </pre></div>
 </td></tr></table>
 

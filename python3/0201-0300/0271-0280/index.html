@@ -6719,6 +6719,72 @@
                 <h2 id="271-encode-and-decode-strings-starstar">271. Encode and Decode Strings <a href="https://leetcode.com/problems/encode-and-decode-strings">$\star\star$</a></h2>
 <h2 id="272-closest-binary-search-tree-value-ii-starstarstar">272. Closest Binary Search Tree Value II <a href="https://leetcode.com/problems/closest-binary-search-tree-value-ii">$\star\star\star$</a></h2>
 <h2 id="273-integer-to-english-words-starstarstar">273. Integer to English Words <a href="https://leetcode.com/problems/integer-to-english-words">$\star\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">numberToWords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">num</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">belowTwenty</span><span class="p">[</span><span class="n">num</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">tens</span><span class="p">[</span><span class="n">num</span> <span class="o">//</span> <span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">//</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Hundred &quot;</span> <span class="o">+</span> <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">//</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Thousand &quot;</span> <span class="o">+</span> <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">1000</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1000000000</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">//</span> <span class="mi">1000000</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Million &quot;</span> <span class="o">+</span> \
+                    <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">1000000</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">//</span> <span class="mi">1000000000</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Billion &quot;</span> <span class="o">+</span> \
+                    <span class="n">helper</span><span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">1000000000</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="n">belowTwenty</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span>        <span class="s2">&quot;One&quot;</span><span class="p">,</span>       <span class="s2">&quot;Two&quot;</span><span class="p">,</span>      <span class="s2">&quot;Three&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Four&quot;</span><span class="p">,</span>    <span class="s2">&quot;Five&quot;</span><span class="p">,</span>      <span class="s2">&quot;Six&quot;</span><span class="p">,</span>      <span class="s2">&quot;Seven&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Eight&quot;</span><span class="p">,</span>   <span class="s2">&quot;Nine&quot;</span><span class="p">,</span>      <span class="s2">&quot;Ten&quot;</span><span class="p">,</span>      <span class="s2">&quot;Eleven&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Twelve&quot;</span><span class="p">,</span>  <span class="s2">&quot;Thirteen&quot;</span><span class="p">,</span>  <span class="s2">&quot;Fourteen&quot;</span><span class="p">,</span> <span class="s2">&quot;Fifteen&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;Sixteen&quot;</span><span class="p">,</span> <span class="s2">&quot;Seventeen&quot;</span><span class="p">,</span> <span class="s2">&quot;Eighteen&quot;</span><span class="p">,</span> <span class="s2">&quot;Nineteen&quot;</span><span class="p">]</span>
+        <span class="n">tens</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span>      <span class="s2">&quot;Ten&quot;</span><span class="p">,</span>   <span class="s2">&quot;Twenty&quot;</span><span class="p">,</span>  <span class="s2">&quot;Thirty&quot;</span><span class="p">,</span> <span class="s2">&quot;Forty&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Fifty&quot;</span><span class="p">,</span> <span class="s2">&quot;Sixty&quot;</span><span class="p">,</span> <span class="s2">&quot;Seventy&quot;</span><span class="p">,</span> <span class="s2">&quot;Eighty&quot;</span><span class="p">,</span> <span class="s2">&quot;Ninety&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Zero&quot;</span>
+
+        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="274-h-index-starstar">274. H-Index <a href="https://leetcode.com/problems/h-index">$\star\star$</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -6777,6 +6843,36 @@
 </td></tr></table>
 
 <h2 id="279-perfect-squares-starstar">279. Perfect Squares <a href="https://leetcode.com/problems/perfect-squares">$\star\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">numSquares</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">while</span> <span class="n">j</span> <span class="o">*</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="o">*</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="280-wiggle-sort-starstar">280. Wiggle Sort <a href="https://leetcode.com/problems/wiggle-sort">$\star\star$</a></h2>
                 
                   

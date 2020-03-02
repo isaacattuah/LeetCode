@@ -6889,8 +6889,68 @@
 <h2 id="5-longest-palindromic-substring-starstar">5. Longest Palindromic Substring <a href="https://leetcode.com/problems/longest-palindromic-substring">$\star\star$</a></h2>
 <h2 id="6-zigzag-conversion-starstar">6. ZigZag Conversion <a href="https://leetcode.com/problems/zigzag-conversion">$\star\star$</a></h2>
 <h2 id="7-reverse-integer-star">7. Reverse Integer <a href="https://leetcode.com/problems/reverse-integer">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">reverse</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">long</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="n">x</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">ans</span> <span class="o">&lt;</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span> <span class="o">||</span> <span class="n">ans</span> <span class="o">&gt;</span> <span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="8-string-to-integer-atoi-starstar">8. String to Integer (atoi) <a href="https://leetcode.com/problems/string-to-integer-atoi">$\star\star$</a></h2>
 <h2 id="9-palindrome-number-star">9. Palindrome Number <a href="https://leetcode.com/problems/palindrome-number">$\star$</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+    <span class="kt">long</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">y</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="n">y</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">ans</span> <span class="o">==</span> <span class="n">x</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="10-regular-expression-matching-starstarstar">10. Regular Expression Matching <a href="https://leetcode.com/problems/regular-expression-matching">$\star\star\star$</a></h2>
                 
                   

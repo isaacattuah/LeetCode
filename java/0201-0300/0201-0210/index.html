@@ -6826,7 +6826,8 @@
 20
 21
 22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">countPrimes</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span>
       <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -6834,6 +6835,7 @@
     <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="kt">boolean</span><span class="o">[]</span> <span class="n">prime</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
     <span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">prime</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
     <span class="n">prime</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
     <span class="n">prime</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
